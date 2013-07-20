@@ -1,0 +1,2764 @@
+
+libiks483.so:     file format elf32-i386
+
+
+Disassembly of section .init:
+
+00001adc <_init>:
+    1adc:	55                   	push   %ebp
+    1add:	89 e5                	mov    %esp,%ebp
+    1adf:	53                   	push   %ebx
+    1ae0:	83 ec 04             	sub    $0x4,%esp
+    1ae3:	e8 00 00 00 00       	call   1ae8 <_init+0xc>
+    1ae8:	5b                   	pop    %ebx
+    1ae9:	81 c3 0c 45 00 00    	add    $0x450c,%ebx
+    1aef:	8b 93 f4 ff ff ff    	mov    -0xc(%ebx),%edx
+    1af5:	85 d2                	test   %edx,%edx
+    1af7:	74 05                	je     1afe <_init+0x22>
+    1af9:	e8 1e 00 00 00       	call   1b1c <__gmon_start__@plt>
+    1afe:	e8 bd 00 00 00       	call   1bc0 <frame_dummy>
+    1b03:	e8 38 1c 00 00       	call   3740 <__do_global_ctors_aux>
+    1b08:	58                   	pop    %eax
+    1b09:	5b                   	pop    %ebx
+    1b0a:	c9                   	leave  
+    1b0b:	c3                   	ret    
+
+Disassembly of section .plt:
+
+00001b0c <__gmon_start__@plt-0x10>:
+    1b0c:	ff b3 04 00 00 00    	pushl  0x4(%ebx)
+    1b12:	ff a3 08 00 00 00    	jmp    *0x8(%ebx)
+    1b18:	00 00                	add    %al,(%eax)
+	...
+
+00001b1c <__gmon_start__@plt>:
+    1b1c:	ff a3 0c 00 00 00    	jmp    *0xc(%ebx)
+    1b22:	68 00 00 00 00       	push   $0x0
+    1b27:	e9 e0 ff ff ff       	jmp    1b0c <_init+0x30>
+
+00001b2c <__cxa_finalize@plt>:
+    1b2c:	ff a3 10 00 00 00    	jmp    *0x10(%ebx)
+    1b32:	68 08 00 00 00       	push   $0x8
+    1b37:	e9 d0 ff ff ff       	jmp    1b0c <_init+0x30>
+
+Disassembly of section .text:
+
+00001b40 <__do_global_dtors_aux>:
+    1b40:	55                   	push   %ebp
+    1b41:	89 e5                	mov    %esp,%ebp
+    1b43:	56                   	push   %esi
+    1b44:	53                   	push   %ebx
+    1b45:	e8 ad 00 00 00       	call   1bf7 <__i686.get_pc_thunk.bx>
+    1b4a:	81 c3 aa 44 00 00    	add    $0x44aa,%ebx
+    1b50:	83 ec 10             	sub    $0x10,%esp
+    1b53:	80 bb 1c 00 00 00 00 	cmpb   $0x0,0x1c(%ebx)
+    1b5a:	75 5d                	jne    1bb9 <__do_global_dtors_aux+0x79>
+    1b5c:	8b 83 fc ff ff ff    	mov    -0x4(%ebx),%eax
+    1b62:	85 c0                	test   %eax,%eax
+    1b64:	74 0e                	je     1b74 <__do_global_dtors_aux+0x34>
+    1b66:	8b 83 14 00 00 00    	mov    0x14(%ebx),%eax
+    1b6c:	89 04 24             	mov    %eax,(%esp)
+    1b6f:	e8 b8 ff ff ff       	call   1b2c <__cxa_finalize@plt>
+    1b74:	8b 8b 20 00 00 00    	mov    0x20(%ebx),%ecx
+    1b7a:	8d 83 0c ff ff ff    	lea    -0xf4(%ebx),%eax
+    1b80:	8d 93 08 ff ff ff    	lea    -0xf8(%ebx),%edx
+    1b86:	29 d0                	sub    %edx,%eax
+    1b88:	c1 f8 02             	sar    $0x2,%eax
+    1b8b:	8d 70 ff             	lea    -0x1(%eax),%esi
+    1b8e:	39 f1                	cmp    %esi,%ecx
+    1b90:	73 20                	jae    1bb2 <__do_global_dtors_aux+0x72>
+    1b92:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+    1b98:	8d 41 01             	lea    0x1(%ecx),%eax
+    1b9b:	89 83 20 00 00 00    	mov    %eax,0x20(%ebx)
+    1ba1:	ff 94 83 08 ff ff ff 	call   *-0xf8(%ebx,%eax,4)
+    1ba8:	8b 8b 20 00 00 00    	mov    0x20(%ebx),%ecx
+    1bae:	39 f1                	cmp    %esi,%ecx
+    1bb0:	72 e6                	jb     1b98 <__do_global_dtors_aux+0x58>
+    1bb2:	c6 83 1c 00 00 00 01 	movb   $0x1,0x1c(%ebx)
+    1bb9:	83 c4 10             	add    $0x10,%esp
+    1bbc:	5b                   	pop    %ebx
+    1bbd:	5e                   	pop    %esi
+    1bbe:	5d                   	pop    %ebp
+    1bbf:	c3                   	ret    
+
+00001bc0 <frame_dummy>:
+    1bc0:	55                   	push   %ebp
+    1bc1:	89 e5                	mov    %esp,%ebp
+    1bc3:	53                   	push   %ebx
+    1bc4:	e8 2e 00 00 00       	call   1bf7 <__i686.get_pc_thunk.bx>
+    1bc9:	81 c3 2b 44 00 00    	add    $0x442b,%ebx
+    1bcf:	83 ec 04             	sub    $0x4,%esp
+    1bd2:	8b 93 10 ff ff ff    	mov    -0xf0(%ebx),%edx
+    1bd8:	85 d2                	test   %edx,%edx
+    1bda:	74 15                	je     1bf1 <frame_dummy+0x31>
+    1bdc:	8b 93 f8 ff ff ff    	mov    -0x8(%ebx),%edx
+    1be2:	85 d2                	test   %edx,%edx
+    1be4:	74 0b                	je     1bf1 <frame_dummy+0x31>
+    1be6:	8d 83 10 ff ff ff    	lea    -0xf0(%ebx),%eax
+    1bec:	89 04 24             	mov    %eax,(%esp)
+    1bef:	ff d2                	call   *%edx
+    1bf1:	83 c4 04             	add    $0x4,%esp
+    1bf4:	5b                   	pop    %ebx
+    1bf5:	5d                   	pop    %ebp
+    1bf6:	c3                   	ret    
+
+00001bf7 <__i686.get_pc_thunk.bx>:
+    1bf7:	8b 1c 24             	mov    (%esp),%ebx
+    1bfa:	c3                   	ret    
+    1bfb:	90                   	nop
+
+00001bfc <Calc_CS>:
+    1bfc:	55                   	push   %ebp
+    1bfd:	31 c0                	xor    %eax,%eax
+    1bff:	89 e5                	mov    %esp,%ebp
+    1c01:	31 d2                	xor    %edx,%edx
+    1c03:	8b 4d 08             	mov    0x8(%ebp),%ecx
+    1c06:	eb 04                	jmp    1c0c <Calc_CS+0x10>
+    1c08:	02 04 11             	add    (%ecx,%edx,1),%al
+    1c0b:	42                   	inc    %edx
+    1c0c:	3b 55 0c             	cmp    0xc(%ebp),%edx
+    1c0f:	7c f7                	jl     1c08 <Calc_CS+0xc>
+    1c11:	f7 d8                	neg    %eax
+    1c13:	5d                   	pop    %ebp
+    1c14:	c3                   	ret    
+
+00001c15 <power>:
+    1c15:	55                   	push   %ebp
+    1c16:	ba 01 00 00 00       	mov    $0x1,%edx
+    1c1b:	89 e5                	mov    %esp,%ebp
+    1c1d:	b8 01 00 00 00       	mov    $0x1,%eax
+    1c22:	eb 05                	jmp    1c29 <power+0x14>
+    1c24:	0f af 45 08          	imul   0x8(%ebp),%eax
+    1c28:	42                   	inc    %edx
+    1c29:	3b 55 0c             	cmp    0xc(%ebp),%edx
+    1c2c:	7e f6                	jle    1c24 <power+0xf>
+    1c2e:	5d                   	pop    %ebp
+    1c2f:	c3                   	ret    
+
+00001c30 <GetByteStatus>:
+    1c30:	55                   	push   %ebp
+    1c31:	a0 00 00 00 00       	mov    0x0,%al
+    1c36:	89 e5                	mov    %esp,%ebp
+    1c38:	5d                   	pop    %ebp
+    1c39:	c3                   	ret    
+
+00001c3a <FPErrorMessage>:
+    1c3a:	0f b6 05 00 00 00 00 	movzbl 0x0,%eax
+    1c41:	55                   	push   %ebp
+    1c42:	89 e5                	mov    %esp,%ebp
+    1c44:	5d                   	pop    %ebp
+    1c45:	8b 04 85 4c 3f 00 00 	mov    0x3f4c(,%eax,4),%eax
+    1c4c:	c3                   	ret    
+
+00001c4d <GetByteResult>:
+    1c4d:	55                   	push   %ebp
+    1c4e:	0f b6 05 00 00 00 00 	movzbl 0x0,%eax
+    1c55:	89 e5                	mov    %esp,%ebp
+    1c57:	5d                   	pop    %ebp
+    1c58:	c3                   	ret    
+
+00001c59 <FPClose>:
+    1c59:	55                   	push   %ebp
+    1c5a:	89 e5                	mov    %esp,%ebp
+    1c5c:	83 ec 14             	sub    $0x14,%esp
+    1c5f:	ff 35 00 00 00 00    	pushl  0x0
+    1c65:	e8 fc ff ff ff       	call   1c66 <FPClose+0xd>
+    1c6a:	c9                   	leave  
+    1c6b:	c3                   	ret    
+
+00001c6c <ReadPort>:
+    1c6c:	55                   	push   %ebp
+    1c6d:	89 e5                	mov    %esp,%ebp
+    1c6f:	57                   	push   %edi
+    1c70:	56                   	push   %esi
+    1c71:	53                   	push   %ebx
+    1c72:	bb 01 00 00 00       	mov    $0x1,%ebx
+    1c77:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    1c7d:	8b 7d 08             	mov    0x8(%ebp),%edi
+    1c80:	c6 07 16             	movb   $0x16,(%edi)
+    1c83:	eb 17                	jmp    1c9c <ReadPort+0x30>
+    1c85:	51                   	push   %ecx
+    1c86:	68 80 00 00 00       	push   $0x80
+    1c8b:	57                   	push   %edi
+    1c8c:	ff 35 00 00 00 00    	pushl  0x0
+    1c92:	e8 fc ff ff ff       	call   1c93 <ReadPort+0x27>
+    1c97:	83 c4 10             	add    $0x10,%esp
+    1c9a:	89 c3                	mov    %eax,%ebx
+    1c9c:	8a 07                	mov    (%edi),%al
+    1c9e:	3c 16                	cmp    $0x16,%al
+    1ca0:	75 05                	jne    1ca7 <ReadPort+0x3b>
+    1ca2:	83 fb 01             	cmp    $0x1,%ebx
+    1ca5:	74 de                	je     1c85 <ReadPort+0x19>
+    1ca7:	83 fb 01             	cmp    $0x1,%ebx
+    1caa:	75 20                	jne    1ccc <ReadPort+0x60>
+    1cac:	3c 06                	cmp    $0x6,%al
+    1cae:	75 20                	jne    1cd0 <ReadPort+0x64>
+    1cb0:	52                   	push   %edx
+    1cb1:	68 80 00 00 00       	push   $0x80
+    1cb6:	57                   	push   %edi
+    1cb7:	ff 35 00 00 00 00    	pushl  0x0
+    1cbd:	e8 fc ff ff ff       	call   1cbe <ReadPort+0x52>
+    1cc2:	83 c4 10             	add    $0x10,%esp
+    1cc5:	83 f8 01             	cmp    $0x1,%eax
+    1cc8:	89 c3                	mov    %eax,%ebx
+    1cca:	74 04                	je     1cd0 <ReadPort+0x64>
+    1ccc:	85 db                	test   %ebx,%ebx
+    1cce:	79 13                	jns    1ce3 <ReadPort+0x77>
+    1cd0:	80 3f 15             	cmpb   $0x15,(%edi)
+    1cd3:	0f 85 25 01 00 00    	jne    1dfe <ReadPort+0x192>
+    1cd9:	bb fd ff ff ff       	mov    $0xfffffffd,%ebx
+    1cde:	e9 1b 01 00 00       	jmp    1dfe <ReadPort+0x192>
+    1ce3:	80 3f 06             	cmpb   $0x6,(%edi)
+    1ce6:	75 1a                	jne    1d02 <ReadPort+0x96>
+    1ce8:	80 7f 01 10          	cmpb   $0x10,0x1(%edi)
+    1cec:	ba 01 00 00 00       	mov    $0x1,%edx
+    1cf1:	75 0f                	jne    1d02 <ReadPort+0x96>
+    1cf3:	eb 08                	jmp    1cfd <ReadPort+0x91>
+    1cf5:	8a 04 17             	mov    (%edi,%edx,1),%al
+    1cf8:	88 44 17 ff          	mov    %al,-0x1(%edi,%edx,1)
+    1cfc:	42                   	inc    %edx
+    1cfd:	39 da                	cmp    %ebx,%edx
+    1cff:	7c f4                	jl     1cf5 <ReadPort+0x89>
+    1d01:	4b                   	dec    %ebx
+    1d02:	80 3f 10             	cmpb   $0x10,(%edi)
+    1d05:	0f 85 ee 00 00 00    	jne    1df9 <ReadPort+0x18d>
+    1d0b:	80 7f 01 02          	cmpb   $0x2,0x1(%edi)
+    1d0f:	0f 85 e4 00 00 00    	jne    1df9 <ReadPort+0x18d>
+    1d15:	eb 39                	jmp    1d50 <ReadPort+0xe4>
+    1d17:	50                   	push   %eax
+    1d18:	68 80 00 00 00       	push   $0x80
+    1d1d:	8d 85 74 ff ff ff    	lea    -0x8c(%ebp),%eax
+    1d23:	50                   	push   %eax
+    1d24:	ff 35 00 00 00 00    	pushl  0x0
+    1d2a:	8d 34 1f             	lea    (%edi,%ebx,1),%esi
+    1d2d:	e8 fc ff ff ff       	call   1d2e <ReadPort+0xc2>
+    1d32:	31 d2                	xor    %edx,%edx
+    1d34:	83 c4 10             	add    $0x10,%esp
+    1d37:	8d 0c 18             	lea    (%eax,%ebx,1),%ecx
+    1d3a:	eb 0b                	jmp    1d47 <ReadPort+0xdb>
+    1d3c:	8a 84 15 74 ff ff ff 	mov    -0x8c(%ebp,%edx,1),%al
+    1d43:	88 04 16             	mov    %al,(%esi,%edx,1)
+    1d46:	42                   	inc    %edx
+    1d47:	8d 04 1a             	lea    (%edx,%ebx,1),%eax
+    1d4a:	39 c8                	cmp    %ecx,%eax
+    1d4c:	7c ee                	jl     1d3c <ReadPort+0xd0>
+    1d4e:	89 cb                	mov    %ecx,%ebx
+    1d50:	80 7c 1f ff 03       	cmpb   $0x3,-0x1(%edi,%ebx,1)
+    1d55:	75 c0                	jne    1d17 <ReadPort+0xab>
+    1d57:	80 7c 1f fe 10       	cmpb   $0x10,-0x2(%edi,%ebx,1)
+    1d5c:	75 b9                	jne    1d17 <ReadPort+0xab>
+    1d5e:	8a 47 04             	mov    0x4(%edi),%al
+    1d61:	8d 4b fe             	lea    -0x2(%ebx),%ecx
+    1d64:	ba 02 00 00 00       	mov    $0x2,%edx
+    1d69:	a2 00 00 00 00       	mov    %al,0x0
+    1d6e:	8a 47 05             	mov    0x5(%edi),%al
+    1d71:	a2 00 00 00 00       	mov    %al,0x0
+    1d76:	8a 47 06             	mov    0x6(%edi),%al
+    1d79:	a2 00 00 00 00       	mov    %al,0x0
+    1d7e:	eb 08                	jmp    1d88 <ReadPort+0x11c>
+    1d80:	8a 04 17             	mov    (%edi,%edx,1),%al
+    1d83:	88 44 17 fe          	mov    %al,-0x2(%edi,%edx,1)
+    1d87:	42                   	inc    %edx
+    1d88:	39 ca                	cmp    %ecx,%edx
+    1d8a:	7c f4                	jl     1d80 <ReadPort+0x114>
+    1d8c:	8d 71 fe             	lea    -0x2(%ecx),%esi
+    1d8f:	31 d2                	xor    %edx,%edx
+    1d91:	eb 23                	jmp    1db6 <ReadPort+0x14a>
+    1d93:	8d 04 17             	lea    (%edi,%edx,1),%eax
+    1d96:	80 38 10             	cmpb   $0x10,(%eax)
+    1d99:	75 1a                	jne    1db5 <ReadPort+0x149>
+    1d9b:	80 7c 17 01 10       	cmpb   $0x10,0x1(%edi,%edx,1)
+    1da0:	75 13                	jne    1db5 <ReadPort+0x149>
+    1da2:	42                   	inc    %edx
+    1da3:	89 c1                	mov    %eax,%ecx
+    1da5:	89 d3                	mov    %edx,%ebx
+    1da7:	eb 06                	jmp    1daf <ReadPort+0x143>
+    1da9:	8a 01                	mov    (%ecx),%al
+    1dab:	43                   	inc    %ebx
+    1dac:	88 41 ff             	mov    %al,-0x1(%ecx)
+    1daf:	41                   	inc    %ecx
+    1db0:	39 f3                	cmp    %esi,%ebx
+    1db2:	7c f5                	jl     1da9 <ReadPort+0x13d>
+    1db4:	4e                   	dec    %esi
+    1db5:	42                   	inc    %edx
+    1db6:	39 f2                	cmp    %esi,%edx
+    1db8:	7c d9                	jl     1d93 <ReadPort+0x127>
+    1dba:	8d 4e ff             	lea    -0x1(%esi),%ecx
+    1dbd:	31 c0                	xor    %eax,%eax
+    1dbf:	31 d2                	xor    %edx,%edx
+    1dc1:	eb 04                	jmp    1dc7 <ReadPort+0x15b>
+    1dc3:	02 14 07             	add    (%edi,%eax,1),%dl
+    1dc6:	40                   	inc    %eax
+    1dc7:	39 c8                	cmp    %ecx,%eax
+    1dc9:	7c f8                	jl     1dc3 <ReadPort+0x157>
+    1dcb:	02 54 37 ff          	add    -0x1(%edi,%esi,1),%dl
+    1dcf:	74 10                	je     1de1 <ReadPort+0x175>
+    1dd1:	83 ec 0c             	sub    $0xc,%esp
+    1dd4:	68 94 37 00 00       	push   $0x3794
+    1dd9:	e8 fc ff ff ff       	call   1dda <ReadPort+0x16e>
+    1dde:	83 c4 10             	add    $0x10,%esp
+    1de1:	ba 05 00 00 00       	mov    $0x5,%edx
+    1de6:	eb 08                	jmp    1df0 <ReadPort+0x184>
+    1de8:	8a 04 17             	mov    (%edi,%edx,1),%al
+    1deb:	88 44 17 fb          	mov    %al,-0x5(%edi,%edx,1)
+    1def:	42                   	inc    %edx
+    1df0:	39 f2                	cmp    %esi,%edx
+    1df2:	7c f4                	jl     1de8 <ReadPort+0x17c>
+    1df4:	8d 5e fa             	lea    -0x6(%esi),%ebx
+    1df7:	eb 05                	jmp    1dfe <ReadPort+0x192>
+    1df9:	bb fc ff ff ff       	mov    $0xfffffffc,%ebx
+    1dfe:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    1e01:	89 d8                	mov    %ebx,%eax
+    1e03:	5b                   	pop    %ebx
+    1e04:	5e                   	pop    %esi
+    1e05:	5f                   	pop    %edi
+    1e06:	5d                   	pop    %ebp
+    1e07:	c3                   	ret    
+
+00001e08 <WritePort>:
+    1e08:	55                   	push   %ebp
+    1e09:	31 c0                	xor    %eax,%eax
+    1e0b:	89 e5                	mov    %esp,%ebp
+    1e0d:	31 d2                	xor    %edx,%edx
+    1e0f:	57                   	push   %edi
+    1e10:	56                   	push   %esi
+    1e11:	53                   	push   %ebx
+    1e12:	83 ec 0c             	sub    $0xc,%esp
+    1e15:	8a 4d 0c             	mov    0xc(%ebp),%cl
+    1e18:	0f b6 d9             	movzbl %cl,%ebx
+    1e1b:	eb 07                	jmp    1e24 <WritePort+0x1c>
+    1e1d:	8b 75 08             	mov    0x8(%ebp),%esi
+    1e20:	02 14 06             	add    (%esi,%eax,1),%dl
+    1e23:	40                   	inc    %eax
+    1e24:	39 d8                	cmp    %ebx,%eax
+    1e26:	7c f5                	jl     1e1d <WritePort+0x15>
+    1e28:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    1e2b:	f7 da                	neg    %edx
+    1e2d:	0f b6 c1             	movzbl %cl,%eax
+    1e30:	8d 79 01             	lea    0x1(%ecx),%edi
+    1e33:	88 14 03             	mov    %dl,(%ebx,%eax,1)
+    1e36:	31 d2                	xor    %edx,%edx
+    1e38:	fe 05 00 00 00 00    	incb   0x0
+    1e3e:	eb 23                	jmp    1e63 <WritePort+0x5b>
+    1e40:	8b 45 08             	mov    0x8(%ebp),%eax
+    1e43:	80 3c 10 10          	cmpb   $0x10,(%eax,%edx,1)
+    1e47:	75 19                	jne    1e62 <WritePort+0x5a>
+    1e49:	8d 4c 30 ff          	lea    -0x1(%eax,%esi,1),%ecx
+    1e4d:	31 db                	xor    %ebx,%ebx
+    1e4f:	eb 07                	jmp    1e58 <WritePort+0x50>
+    1e51:	8a 01                	mov    (%ecx),%al
+    1e53:	43                   	inc    %ebx
+    1e54:	88 41 01             	mov    %al,0x1(%ecx)
+    1e57:	49                   	dec    %ecx
+    1e58:	89 f0                	mov    %esi,%eax
+    1e5a:	29 d8                	sub    %ebx,%eax
+    1e5c:	39 d0                	cmp    %edx,%eax
+    1e5e:	7f f1                	jg     1e51 <WritePort+0x49>
+    1e60:	47                   	inc    %edi
+    1e61:	42                   	inc    %edx
+    1e62:	42                   	inc    %edx
+    1e63:	89 fb                	mov    %edi,%ebx
+    1e65:	0f b6 f3             	movzbl %bl,%esi
+    1e68:	39 f2                	cmp    %esi,%edx
+    1e6a:	7c d4                	jl     1e40 <WritePort+0x38>
+    1e6c:	8b 55 08             	mov    0x8(%ebp),%edx
+    1e6f:	8d 4e 01             	lea    0x1(%esi),%ecx
+    1e72:	01 f2                	add    %esi,%edx
+    1e74:	eb 06                	jmp    1e7c <WritePort+0x74>
+    1e76:	8a 02                	mov    (%edx),%al
+    1e78:	49                   	dec    %ecx
+    1e79:	88 42 02             	mov    %al,0x2(%edx)
+    1e7c:	4a                   	dec    %edx
+    1e7d:	83 f9 01             	cmp    $0x1,%ecx
+    1e80:	7f f4                	jg     1e76 <WritePort+0x6e>
+    1e82:	8b 75 08             	mov    0x8(%ebp),%esi
+    1e85:	8d 47 02             	lea    0x2(%edi),%eax
+    1e88:	0f b6 c0             	movzbl %al,%eax
+    1e8b:	8d 5f 04             	lea    0x4(%edi),%ebx
+    1e8e:	0f b6 db             	movzbl %bl,%ebx
+    1e91:	c6 06 10             	movb   $0x10,(%esi)
+    1e94:	c6 46 01 02          	movb   $0x2,0x1(%esi)
+    1e98:	c6 04 06 10          	movb   $0x10,(%esi,%eax,1)
+    1e9c:	8d 47 03             	lea    0x3(%edi),%eax
+    1e9f:	0f b6 c0             	movzbl %al,%eax
+    1ea2:	c6 04 06 03          	movb   $0x3,(%esi,%eax,1)
+    1ea6:	57                   	push   %edi
+    1ea7:	53                   	push   %ebx
+    1ea8:	56                   	push   %esi
+    1ea9:	ff 35 00 00 00 00    	pushl  0x0
+    1eaf:	e8 fc ff ff ff       	call   1eb0 <WritePort+0xa8>
+    1eb4:	83 c4 10             	add    $0x10,%esp
+    1eb7:	31 d2                	xor    %edx,%edx
+    1eb9:	39 d8                	cmp    %ebx,%eax
+    1ebb:	74 15                	je     1ed2 <WritePort+0xca>
+    1ebd:	83 ec 0c             	sub    $0xc,%esp
+    1ec0:	68 a9 37 00 00       	push   $0x37a9
+    1ec5:	e8 fc ff ff ff       	call   1ec6 <WritePort+0xbe>
+    1eca:	ba fe ff ff ff       	mov    $0xfffffffe,%edx
+    1ecf:	83 c4 10             	add    $0x10,%esp
+    1ed2:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    1ed5:	89 d0                	mov    %edx,%eax
+    1ed7:	5b                   	pop    %ebx
+    1ed8:	5e                   	pop    %esi
+    1ed9:	5f                   	pop    %edi
+    1eda:	5d                   	pop    %ebp
+    1edb:	c3                   	ret    
+
+00001edc <FPSetTaxRate>:
+    1edc:	55                   	push   %ebp
+    1edd:	89 e5                	mov    %esp,%ebp
+    1edf:	57                   	push   %edi
+    1ee0:	56                   	push   %esi
+    1ee1:	53                   	push   %ebx
+    1ee2:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    1ee8:	8b 45 1c             	mov    0x1c(%ebp),%eax
+    1eeb:	8b 55 0c             	mov    0xc(%ebp),%edx
+    1eee:	8b 75 14             	mov    0x14(%ebp),%esi
+    1ef1:	8b 7d 18             	mov    0x18(%ebp),%edi
+    1ef4:	89 85 70 ff ff ff    	mov    %eax,-0x90(%ebp)
+    1efa:	8b 45 20             	mov    0x20(%ebp),%eax
+    1efd:	80 fa 01             	cmp    $0x1,%dl
+    1f00:	8a 5d 28             	mov    0x28(%ebp),%bl
+    1f03:	c6 85 75 ff ff ff 19 	movb   $0x19,-0x8b(%ebp)
+    1f0a:	88 95 78 ff ff ff    	mov    %dl,-0x88(%ebp)
+    1f10:	89 85 6c ff ff ff    	mov    %eax,-0x94(%ebp)
+    1f16:	8a 45 24             	mov    0x24(%ebp),%al
+    1f19:	88 85 6b ff ff ff    	mov    %al,-0x95(%ebp)
+    1f1f:	a0 00 00 00 00       	mov    0x0,%al
+    1f24:	88 85 74 ff ff ff    	mov    %al,-0x8c(%ebp)
+    1f2a:	8b 45 08             	mov    0x8(%ebp),%eax
+    1f2d:	66 89 85 76 ff ff ff 	mov    %ax,-0x8a(%ebp)
+    1f34:	8b 45 10             	mov    0x10(%ebp),%eax
+    1f37:	66 89 85 79 ff ff ff 	mov    %ax,-0x87(%ebp)
+    1f3e:	b8 07 00 00 00       	mov    $0x7,%eax
+    1f43:	76 45                	jbe    1f8a <FPSetTaxRate+0xae>
+    1f45:	80 fa 02             	cmp    $0x2,%dl
+    1f48:	b0 09                	mov    $0x9,%al
+    1f4a:	66 89 b5 7b ff ff ff 	mov    %si,-0x85(%ebp)
+    1f51:	74 37                	je     1f8a <FPSetTaxRate+0xae>
+    1f53:	80 fa 03             	cmp    $0x3,%dl
+    1f56:	b8 0b 00 00 00       	mov    $0xb,%eax
+    1f5b:	66 89 bd 7d ff ff ff 	mov    %di,-0x83(%ebp)
+    1f62:	74 26                	je     1f8a <FPSetTaxRate+0xae>
+    1f64:	8b 85 70 ff ff ff    	mov    -0x90(%ebp),%eax
+    1f6a:	80 fa 04             	cmp    $0x4,%dl
+    1f6d:	66 89 85 7f ff ff ff 	mov    %ax,-0x81(%ebp)
+    1f74:	b8 0d 00 00 00       	mov    $0xd,%eax
+    1f79:	74 0f                	je     1f8a <FPSetTaxRate+0xae>
+    1f7b:	8b 85 6c ff ff ff    	mov    -0x94(%ebp),%eax
+    1f81:	66 89 45 81          	mov    %ax,-0x7f(%ebp)
+    1f85:	b8 0f 00 00 00       	mov    $0xf,%eax
+    1f8a:	80 bd 6b ff ff ff 00 	cmpb   $0x0,-0x95(%ebp)
+    1f91:	74 03                	je     1f96 <FPSetTaxRate+0xba>
+    1f93:	83 cb 10             	or     $0x10,%ebx
+    1f96:	52                   	push   %edx
+    1f97:	52                   	push   %edx
+    1f98:	88 9c 05 74 ff ff ff 	mov    %bl,-0x8c(%ebp,%eax,1)
+    1f9f:	40                   	inc    %eax
+    1fa0:	50                   	push   %eax
+    1fa1:	8d 9d 74 ff ff ff    	lea    -0x8c(%ebp),%ebx
+    1fa7:	53                   	push   %ebx
+    1fa8:	e8 fc ff ff ff       	call   1fa9 <FPSetTaxRate+0xcd>
+    1fad:	83 c4 10             	add    $0x10,%esp
+    1fb0:	85 c0                	test   %eax,%eax
+    1fb2:	78 0c                	js     1fc0 <FPSetTaxRate+0xe4>
+    1fb4:	83 ec 0c             	sub    $0xc,%esp
+    1fb7:	53                   	push   %ebx
+    1fb8:	e8 fc ff ff ff       	call   1fb9 <FPSetTaxRate+0xdd>
+    1fbd:	83 c4 10             	add    $0x10,%esp
+    1fc0:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    1fc3:	5b                   	pop    %ebx
+    1fc4:	5e                   	pop    %esi
+    1fc5:	5f                   	pop    %edi
+    1fc6:	5d                   	pop    %ebp
+    1fc7:	c3                   	ret    
+
+00001fc8 <FPPeriodicNumberReport>:
+    1fc8:	55                   	push   %ebp
+    1fc9:	89 e5                	mov    %esp,%ebp
+    1fcb:	53                   	push   %ebx
+    1fcc:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    1fd2:	a0 00 00 00 00       	mov    0x0,%al
+    1fd7:	6a 08                	push   $0x8
+    1fd9:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    1fdf:	53                   	push   %ebx
+    1fe0:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    1fe6:	8b 45 08             	mov    0x8(%ebp),%eax
+    1fe9:	c6 85 7d ff ff ff 1f 	movb   $0x1f,-0x83(%ebp)
+    1ff0:	66 89 85 7e ff ff ff 	mov    %ax,-0x82(%ebp)
+    1ff7:	8b 45 0c             	mov    0xc(%ebp),%eax
+    1ffa:	66 89 45 80          	mov    %ax,-0x80(%ebp)
+    1ffe:	8b 45 10             	mov    0x10(%ebp),%eax
+    2001:	66 89 45 82          	mov    %ax,-0x7e(%ebp)
+    2005:	e8 fc ff ff ff       	call   2006 <FPPeriodicNumberReport+0x3e>
+    200a:	83 c4 10             	add    $0x10,%esp
+    200d:	85 c0                	test   %eax,%eax
+    200f:	78 0c                	js     201d <FPPeriodicNumberReport+0x55>
+    2011:	83 ec 0c             	sub    $0xc,%esp
+    2014:	53                   	push   %ebx
+    2015:	e8 fc ff ff ff       	call   2016 <FPPeriodicNumberReport+0x4e>
+    201a:	83 c4 10             	add    $0x10,%esp
+    201d:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2020:	c9                   	leave  
+    2021:	c3                   	ret    
+
+00002022 <FPPeriodicReportShort>:
+    2022:	55                   	push   %ebp
+    2023:	89 e5                	mov    %esp,%ebp
+    2025:	53                   	push   %ebx
+    2026:	81 ec 9c 00 00 00    	sub    $0x9c,%esp
+    202c:	a0 00 00 00 00       	mov    0x0,%al
+    2031:	6a 0a                	push   $0xa
+    2033:	8d 9d 79 ff ff ff    	lea    -0x87(%ebp),%ebx
+    2039:	53                   	push   %ebx
+    203a:	88 85 79 ff ff ff    	mov    %al,-0x87(%ebp)
+    2040:	8b 45 08             	mov    0x8(%ebp),%eax
+    2043:	c6 85 7a ff ff ff 1a 	movb   $0x1a,-0x86(%ebp)
+    204a:	66 89 85 7b ff ff ff 	mov    %ax,-0x85(%ebp)
+    2051:	8b 45 0c             	mov    0xc(%ebp),%eax
+    2054:	66 89 45 f9          	mov    %ax,-0x7(%ebp)
+    2058:	8a 45 0e             	mov    0xe(%ebp),%al
+    205b:	88 85 7d ff ff ff    	mov    %al,-0x83(%ebp)
+    2061:	8a 45 fa             	mov    -0x6(%ebp),%al
+    2064:	88 85 7e ff ff ff    	mov    %al,-0x82(%ebp)
+    206a:	8a 45 f9             	mov    -0x7(%ebp),%al
+    206d:	88 85 7f ff ff ff    	mov    %al,-0x81(%ebp)
+    2073:	8b 45 10             	mov    0x10(%ebp),%eax
+    2076:	66 89 45 f9          	mov    %ax,-0x7(%ebp)
+    207a:	8a 45 12             	mov    0x12(%ebp),%al
+    207d:	88 45 fb             	mov    %al,-0x5(%ebp)
+    2080:	88 45 80             	mov    %al,-0x80(%ebp)
+    2083:	8a 45 fa             	mov    -0x6(%ebp),%al
+    2086:	88 45 81             	mov    %al,-0x7f(%ebp)
+    2089:	8a 45 f9             	mov    -0x7(%ebp),%al
+    208c:	88 45 82             	mov    %al,-0x7e(%ebp)
+    208f:	e8 fc ff ff ff       	call   2090 <FPPeriodicReportShort+0x6e>
+    2094:	83 c4 10             	add    $0x10,%esp
+    2097:	85 c0                	test   %eax,%eax
+    2099:	78 0c                	js     20a7 <FPPeriodicReportShort+0x85>
+    209b:	83 ec 0c             	sub    $0xc,%esp
+    209e:	53                   	push   %ebx
+    209f:	e8 fc ff ff ff       	call   20a0 <FPPeriodicReportShort+0x7e>
+    20a4:	83 c4 10             	add    $0x10,%esp
+    20a7:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    20aa:	c9                   	leave  
+    20ab:	c3                   	ret    
+
+000020ac <FPPeriodicReport>:
+    20ac:	55                   	push   %ebp
+    20ad:	89 e5                	mov    %esp,%ebp
+    20af:	53                   	push   %ebx
+    20b0:	81 ec 9c 00 00 00    	sub    $0x9c,%esp
+    20b6:	a0 00 00 00 00       	mov    0x0,%al
+    20bb:	6a 0a                	push   $0xa
+    20bd:	8d 9d 79 ff ff ff    	lea    -0x87(%ebp),%ebx
+    20c3:	53                   	push   %ebx
+    20c4:	88 85 79 ff ff ff    	mov    %al,-0x87(%ebp)
+    20ca:	8b 45 08             	mov    0x8(%ebp),%eax
+    20cd:	c6 85 7a ff ff ff 11 	movb   $0x11,-0x86(%ebp)
+    20d4:	66 89 85 7b ff ff ff 	mov    %ax,-0x85(%ebp)
+    20db:	8b 45 0c             	mov    0xc(%ebp),%eax
+    20de:	66 89 45 f9          	mov    %ax,-0x7(%ebp)
+    20e2:	8a 45 0e             	mov    0xe(%ebp),%al
+    20e5:	88 85 7d ff ff ff    	mov    %al,-0x83(%ebp)
+    20eb:	8a 45 fa             	mov    -0x6(%ebp),%al
+    20ee:	88 85 7e ff ff ff    	mov    %al,-0x82(%ebp)
+    20f4:	8a 45 f9             	mov    -0x7(%ebp),%al
+    20f7:	88 85 7f ff ff ff    	mov    %al,-0x81(%ebp)
+    20fd:	8b 45 10             	mov    0x10(%ebp),%eax
+    2100:	66 89 45 f9          	mov    %ax,-0x7(%ebp)
+    2104:	8a 45 12             	mov    0x12(%ebp),%al
+    2107:	88 45 fb             	mov    %al,-0x5(%ebp)
+    210a:	88 45 80             	mov    %al,-0x80(%ebp)
+    210d:	8a 45 fa             	mov    -0x6(%ebp),%al
+    2110:	88 45 81             	mov    %al,-0x7f(%ebp)
+    2113:	8a 45 f9             	mov    -0x7(%ebp),%al
+    2116:	88 45 82             	mov    %al,-0x7e(%ebp)
+    2119:	e8 fc ff ff ff       	call   211a <FPPeriodicReport+0x6e>
+    211e:	83 c4 10             	add    $0x10,%esp
+    2121:	85 c0                	test   %eax,%eax
+    2123:	78 0c                	js     2131 <FPPeriodicReport+0x85>
+    2125:	83 ec 0c             	sub    $0xc,%esp
+    2128:	53                   	push   %ebx
+    2129:	e8 fc ff ff ff       	call   212a <FPPeriodicReport+0x7e>
+    212e:	83 c4 10             	add    $0x10,%esp
+    2131:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2134:	c9                   	leave  
+    2135:	c3                   	ret    
+
+00002136 <FPDayClrReport>:
+    2136:	55                   	push   %ebp
+    2137:	89 e5                	mov    %esp,%ebp
+    2139:	53                   	push   %ebx
+    213a:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2140:	a0 00 00 00 00       	mov    0x0,%al
+    2145:	6a 04                	push   $0x4
+    2147:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    214d:	53                   	push   %ebx
+    214e:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2154:	8b 45 08             	mov    0x8(%ebp),%eax
+    2157:	c6 85 7d ff ff ff 0d 	movb   $0xd,-0x83(%ebp)
+    215e:	66 89 85 7e ff ff ff 	mov    %ax,-0x82(%ebp)
+    2165:	e8 fc ff ff ff       	call   2166 <FPDayClrReport+0x30>
+    216a:	83 c4 10             	add    $0x10,%esp
+    216d:	85 c0                	test   %eax,%eax
+    216f:	78 0c                	js     217d <FPDayClrReport+0x47>
+    2171:	83 ec 0c             	sub    $0xc,%esp
+    2174:	53                   	push   %ebx
+    2175:	e8 fc ff ff ff       	call   2176 <FPDayClrReport+0x40>
+    217a:	83 c4 10             	add    $0x10,%esp
+    217d:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2180:	c9                   	leave  
+    2181:	c3                   	ret    
+
+00002182 <FPArtXReport>:
+    2182:	55                   	push   %ebp
+    2183:	89 e5                	mov    %esp,%ebp
+    2185:	53                   	push   %ebx
+    2186:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    218c:	a0 00 00 00 00       	mov    0x0,%al
+    2191:	6a 04                	push   $0x4
+    2193:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2199:	53                   	push   %ebx
+    219a:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    21a0:	8b 45 08             	mov    0x8(%ebp),%eax
+    21a3:	c6 85 7d ff ff ff 0a 	movb   $0xa,-0x83(%ebp)
+    21aa:	66 89 85 7e ff ff ff 	mov    %ax,-0x82(%ebp)
+    21b1:	e8 fc ff ff ff       	call   21b2 <FPArtXReport+0x30>
+    21b6:	83 c4 10             	add    $0x10,%esp
+    21b9:	85 c0                	test   %eax,%eax
+    21bb:	78 0c                	js     21c9 <FPArtXReport+0x47>
+    21bd:	83 ec 0c             	sub    $0xc,%esp
+    21c0:	53                   	push   %ebx
+    21c1:	e8 fc ff ff ff       	call   21c2 <FPArtXReport+0x40>
+    21c6:	83 c4 10             	add    $0x10,%esp
+    21c9:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    21cc:	c9                   	leave  
+    21cd:	c3                   	ret    
+
+000021ce <FPDayReport>:
+    21ce:	55                   	push   %ebp
+    21cf:	89 e5                	mov    %esp,%ebp
+    21d1:	53                   	push   %ebx
+    21d2:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    21d8:	a0 00 00 00 00       	mov    0x0,%al
+    21dd:	6a 04                	push   $0x4
+    21df:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    21e5:	53                   	push   %ebx
+    21e6:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    21ec:	8b 45 08             	mov    0x8(%ebp),%eax
+    21ef:	c6 85 7d ff ff ff 09 	movb   $0x9,-0x83(%ebp)
+    21f6:	66 89 85 7e ff ff ff 	mov    %ax,-0x82(%ebp)
+    21fd:	e8 fc ff ff ff       	call   21fe <FPDayReport+0x30>
+    2202:	83 c4 10             	add    $0x10,%esp
+    2205:	85 c0                	test   %eax,%eax
+    2207:	78 0c                	js     2215 <FPDayReport+0x47>
+    2209:	83 ec 0c             	sub    $0xc,%esp
+    220c:	53                   	push   %ebx
+    220d:	e8 fc ff ff ff       	call   220e <FPDayReport+0x40>
+    2212:	83 c4 10             	add    $0x10,%esp
+    2215:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2218:	c9                   	leave  
+    2219:	c3                   	ret    
+
+0000221a <FPArtReport>:
+    221a:	55                   	push   %ebp
+    221b:	89 e5                	mov    %esp,%ebp
+    221d:	53                   	push   %ebx
+    221e:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2224:	a0 00 00 00 00       	mov    0x0,%al
+    2229:	6a 04                	push   $0x4
+    222b:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2231:	53                   	push   %ebx
+    2232:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2238:	8b 45 08             	mov    0x8(%ebp),%eax
+    223b:	c6 85 7d ff ff ff 07 	movb   $0x7,-0x83(%ebp)
+    2242:	66 89 85 7e ff ff ff 	mov    %ax,-0x82(%ebp)
+    2249:	e8 fc ff ff ff       	call   224a <FPArtReport+0x30>
+    224e:	83 c4 10             	add    $0x10,%esp
+    2251:	85 c0                	test   %eax,%eax
+    2253:	78 0c                	js     2261 <FPArtReport+0x47>
+    2255:	83 ec 0c             	sub    $0xc,%esp
+    2258:	53                   	push   %ebx
+    2259:	e8 fc ff ff ff       	call   225a <FPArtReport+0x40>
+    225e:	83 c4 10             	add    $0x10,%esp
+    2261:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2264:	c9                   	leave  
+    2265:	c3                   	ret    
+
+00002266 <FPProgArt>:
+    2266:	55                   	push   %ebp
+    2267:	31 d2                	xor    %edx,%edx
+    2269:	89 e5                	mov    %esp,%ebp
+    226b:	57                   	push   %edi
+    226c:	56                   	push   %esi
+    226d:	53                   	push   %ebx
+    226e:	81 ec 9c 00 00 00    	sub    $0x9c,%esp
+    2274:	a0 00 00 00 00       	mov    0x0,%al
+    2279:	8b 75 14             	mov    0x14(%ebp),%esi
+    227c:	8d 9d 70 ff ff ff    	lea    -0x90(%ebp),%ebx
+    2282:	c6 85 71 ff ff ff 22 	movb   $0x22,-0x8f(%ebp)
+    2289:	8d 4d f0             	lea    -0x10(%ebp),%ecx
+    228c:	88 85 70 ff ff ff    	mov    %al,-0x90(%ebp)
+    2292:	8b 45 08             	mov    0x8(%ebp),%eax
+    2295:	66 89 85 72 ff ff ff 	mov    %ax,-0x8e(%ebp)
+    229c:	8b 45 0c             	mov    0xc(%ebp),%eax
+    229f:	88 85 74 ff ff ff    	mov    %al,-0x8c(%ebp)
+    22a5:	8b 45 10             	mov    0x10(%ebp),%eax
+    22a8:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    22ab:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    22ae:	88 44 13 05          	mov    %al,0x5(%ebx,%edx,1)
+    22b2:	42                   	inc    %edx
+    22b3:	83 fa 04             	cmp    $0x4,%edx
+    22b6:	75 f3                	jne    22ab <FPProgArt+0x45>
+    22b8:	8b 7d 18             	mov    0x18(%ebp),%edi
+    22bb:	8d 46 80             	lea    -0x80(%esi),%eax
+    22be:	83 c9 ff             	or     $0xffffffff,%ecx
+    22c1:	88 85 79 ff ff ff    	mov    %al,-0x87(%ebp)
+    22c7:	31 c0                	xor    %eax,%eax
+    22c9:	30 d2                	xor    %dl,%dl
+    22cb:	8d 9d 70 ff ff ff    	lea    -0x90(%ebp),%ebx
+    22d1:	f2 ae                	repnz scas %es:(%edi),%al
+    22d3:	f7 d1                	not    %ecx
+    22d5:	49                   	dec    %ecx
+    22d6:	88 8d 7a ff ff ff    	mov    %cl,-0x86(%ebp)
+    22dc:	eb 0b                	jmp    22e9 <FPProgArt+0x83>
+    22de:	8b 4d 18             	mov    0x18(%ebp),%ecx
+    22e1:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    22e4:	88 44 13 0b          	mov    %al,0xb(%ebx,%edx,1)
+    22e8:	42                   	inc    %edx
+    22e9:	0f b6 8d 7a ff ff ff 	movzbl -0x86(%ebp),%ecx
+    22f0:	39 ca                	cmp    %ecx,%edx
+    22f2:	7c ea                	jl     22de <FPProgArt+0x78>
+    22f4:	8b 45 1c             	mov    0x1c(%ebp),%eax
+    22f7:	88 84 0d 7b ff ff ff 	mov    %al,-0x85(%ebp,%ecx,1)
+    22fe:	0f b6 95 7a ff ff ff 	movzbl -0x86(%ebp),%edx
+    2305:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    2308:	8a 45 f1             	mov    -0xf(%ebp),%al
+    230b:	51                   	push   %ecx
+    230c:	51                   	push   %ecx
+    230d:	88 84 15 7c ff ff ff 	mov    %al,-0x84(%ebp,%edx,1)
+    2314:	8a 45 f2             	mov    -0xe(%ebp),%al
+    2317:	0f b6 95 7a ff ff ff 	movzbl -0x86(%ebp),%edx
+    231e:	88 84 15 7d ff ff ff 	mov    %al,-0x83(%ebp,%edx,1)
+    2325:	8a 45 f3             	mov    -0xd(%ebp),%al
+    2328:	0f b6 95 7a ff ff ff 	movzbl -0x86(%ebp),%edx
+    232f:	88 84 15 7e ff ff ff 	mov    %al,-0x82(%ebp,%edx,1)
+    2336:	8a 85 7a ff ff ff    	mov    -0x86(%ebp),%al
+    233c:	83 c0 0f             	add    $0xf,%eax
+    233f:	0f b6 c0             	movzbl %al,%eax
+    2342:	50                   	push   %eax
+    2343:	53                   	push   %ebx
+    2344:	e8 fc ff ff ff       	call   2345 <FPProgArt+0xdf>
+    2349:	83 c4 10             	add    $0x10,%esp
+    234c:	85 c0                	test   %eax,%eax
+    234e:	78 0c                	js     235c <FPProgArt+0xf6>
+    2350:	83 ec 0c             	sub    $0xc,%esp
+    2353:	53                   	push   %ebx
+    2354:	e8 fc ff ff ff       	call   2355 <FPProgArt+0xef>
+    2359:	83 c4 10             	add    $0x10,%esp
+    235c:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    235f:	5b                   	pop    %ebx
+    2360:	5e                   	pop    %esi
+    2361:	5f                   	pop    %edi
+    2362:	5d                   	pop    %ebp
+    2363:	c3                   	ret    
+
+00002364 <FPSetHeadLine>:
+    2364:	55                   	push   %ebp
+    2365:	83 c9 ff             	or     $0xffffffff,%ecx
+    2368:	89 e5                	mov    %esp,%ebp
+    236a:	ba 05 00 00 00       	mov    $0x5,%edx
+    236f:	57                   	push   %edi
+    2370:	56                   	push   %esi
+    2371:	53                   	push   %ebx
+    2372:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2378:	a0 00 00 00 00       	mov    0x0,%al
+    237d:	8b 7d 0c             	mov    0xc(%ebp),%edi
+    2380:	8d b5 74 ff ff ff    	lea    -0x8c(%ebp),%esi
+    2386:	c6 85 75 ff ff ff 16 	movb   $0x16,-0x8b(%ebp)
+    238d:	88 85 74 ff ff ff    	mov    %al,-0x8c(%ebp)
+    2393:	8b 45 08             	mov    0x8(%ebp),%eax
+    2396:	66 89 85 76 ff ff ff 	mov    %ax,-0x8a(%ebp)
+    239d:	31 c0                	xor    %eax,%eax
+    239f:	f2 ae                	repnz scas %es:(%edi),%al
+    23a1:	f7 d1                	not    %ecx
+    23a3:	49                   	dec    %ecx
+    23a4:	88 8d 78 ff ff ff    	mov    %cl,-0x88(%ebp)
+    23aa:	eb 05                	jmp    23b1 <FPSetHeadLine+0x4d>
+    23ac:	88 04 16             	mov    %al,(%esi,%edx,1)
+    23af:	89 da                	mov    %ebx,%edx
+    23b1:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+    23b4:	8d 5a 01             	lea    0x1(%edx),%ebx
+    23b7:	8a 44 11 fb          	mov    -0x5(%ecx,%edx,1),%al
+    23bb:	84 c0                	test   %al,%al
+    23bd:	75 ed                	jne    23ac <FPSetHeadLine+0x48>
+    23bf:	8b 7d 10             	mov    0x10(%ebp),%edi
+    23c2:	83 c9 ff             	or     $0xffffffff,%ecx
+    23c5:	f2 ae                	repnz scas %es:(%edi),%al
+    23c7:	f7 d1                	not    %ecx
+    23c9:	49                   	dec    %ecx
+    23ca:	88 8c 15 74 ff ff ff 	mov    %cl,-0x8c(%ebp,%edx,1)
+    23d1:	8d 14 1e             	lea    (%esi,%ebx,1),%edx
+    23d4:	8b 7d 10             	mov    0x10(%ebp),%edi
+    23d7:	eb 05                	jmp    23de <FPSetHeadLine+0x7a>
+    23d9:	88 02                	mov    %al,(%edx)
+    23db:	89 f3                	mov    %esi,%ebx
+    23dd:	42                   	inc    %edx
+    23de:	8a 07                	mov    (%edi),%al
+    23e0:	47                   	inc    %edi
+    23e1:	8d 73 01             	lea    0x1(%ebx),%esi
+    23e4:	84 c0                	test   %al,%al
+    23e6:	75 f1                	jne    23d9 <FPSetHeadLine+0x75>
+    23e8:	8b 7d 14             	mov    0x14(%ebp),%edi
+    23eb:	83 c9 ff             	or     $0xffffffff,%ecx
+    23ee:	8d 94 35 74 ff ff ff 	lea    -0x8c(%ebp,%esi,1),%edx
+    23f5:	f2 ae                	repnz scas %es:(%edi),%al
+    23f7:	f7 d1                	not    %ecx
+    23f9:	49                   	dec    %ecx
+    23fa:	88 8c 1d 74 ff ff ff 	mov    %cl,-0x8c(%ebp,%ebx,1)
+    2401:	89 f3                	mov    %esi,%ebx
+    2403:	8b 7d 14             	mov    0x14(%ebp),%edi
+    2406:	eb 05                	jmp    240d <FPSetHeadLine+0xa9>
+    2408:	88 02                	mov    %al,(%edx)
+    240a:	89 f3                	mov    %esi,%ebx
+    240c:	42                   	inc    %edx
+    240d:	8a 07                	mov    (%edi),%al
+    240f:	47                   	inc    %edi
+    2410:	8d 73 01             	lea    0x1(%ebx),%esi
+    2413:	84 c0                	test   %al,%al
+    2415:	75 f1                	jne    2408 <FPSetHeadLine+0xa4>
+    2417:	8b 7d 18             	mov    0x18(%ebp),%edi
+    241a:	83 c9 ff             	or     $0xffffffff,%ecx
+    241d:	8d 94 35 74 ff ff ff 	lea    -0x8c(%ebp,%esi,1),%edx
+    2424:	f2 ae                	repnz scas %es:(%edi),%al
+    2426:	89 f0                	mov    %esi,%eax
+    2428:	f7 d1                	not    %ecx
+    242a:	49                   	dec    %ecx
+    242b:	88 8c 1d 74 ff ff ff 	mov    %cl,-0x8c(%ebp,%ebx,1)
+    2432:	8b 7d 18             	mov    0x18(%ebp),%edi
+    2435:	eb 04                	jmp    243b <FPSetHeadLine+0xd7>
+    2437:	88 0a                	mov    %cl,(%edx)
+    2439:	40                   	inc    %eax
+    243a:	42                   	inc    %edx
+    243b:	8a 0f                	mov    (%edi),%cl
+    243d:	47                   	inc    %edi
+    243e:	84 c9                	test   %cl,%cl
+    2440:	75 f5                	jne    2437 <FPSetHeadLine+0xd3>
+    2442:	53                   	push   %ebx
+    2443:	0f b6 c0             	movzbl %al,%eax
+    2446:	53                   	push   %ebx
+    2447:	50                   	push   %eax
+    2448:	8d 9d 74 ff ff ff    	lea    -0x8c(%ebp),%ebx
+    244e:	53                   	push   %ebx
+    244f:	e8 fc ff ff ff       	call   2450 <FPSetHeadLine+0xec>
+    2454:	83 c4 10             	add    $0x10,%esp
+    2457:	85 c0                	test   %eax,%eax
+    2459:	78 0c                	js     2467 <FPSetHeadLine+0x103>
+    245b:	83 ec 0c             	sub    $0xc,%esp
+    245e:	53                   	push   %ebx
+    245f:	e8 fc ff ff ff       	call   2460 <FPSetHeadLine+0xfc>
+    2464:	83 c4 10             	add    $0x10,%esp
+    2467:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    246a:	5b                   	pop    %ebx
+    246b:	5e                   	pop    %esi
+    246c:	5f                   	pop    %edi
+    246d:	5d                   	pop    %ebp
+    246e:	c3                   	ret    
+
+0000246f <FPFiscalization>:
+    246f:	55                   	push   %ebp
+    2470:	31 d2                	xor    %edx,%edx
+    2472:	89 e5                	mov    %esp,%ebp
+    2474:	53                   	push   %ebx
+    2475:	81 ec 84 00 00 00    	sub    $0x84,%esp
+    247b:	a0 00 00 00 00       	mov    0x0,%al
+    2480:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+    2483:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2489:	c6 85 7d ff ff ff 15 	movb   $0x15,-0x83(%ebp)
+    2490:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2496:	8b 45 08             	mov    0x8(%ebp),%eax
+    2499:	66 89 85 7e ff ff ff 	mov    %ax,-0x82(%ebp)
+    24a0:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    24a3:	88 44 13 04          	mov    %al,0x4(%ebx,%edx,1)
+    24a7:	42                   	inc    %edx
+    24a8:	83 fa 0a             	cmp    $0xa,%edx
+    24ab:	75 f3                	jne    24a0 <FPFiscalization+0x31>
+    24ad:	50                   	push   %eax
+    24ae:	50                   	push   %eax
+    24af:	6a 0e                	push   $0xe
+    24b1:	53                   	push   %ebx
+    24b2:	e8 fc ff ff ff       	call   24b3 <FPFiscalization+0x44>
+    24b7:	83 c4 10             	add    $0x10,%esp
+    24ba:	85 c0                	test   %eax,%eax
+    24bc:	78 0c                	js     24ca <FPFiscalization+0x5b>
+    24be:	83 ec 0c             	sub    $0xc,%esp
+    24c1:	53                   	push   %ebx
+    24c2:	e8 fc ff ff ff       	call   24c3 <FPFiscalization+0x54>
+    24c7:	83 c4 10             	add    $0x10,%esp
+    24ca:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    24cd:	c9                   	leave  
+    24ce:	c3                   	ret    
+
+000024cf <FPLineSP>:
+    24cf:	55                   	push   %ebp
+    24d0:	89 e5                	mov    %esp,%ebp
+    24d2:	53                   	push   %ebx
+    24d3:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    24d9:	a0 00 00 00 00       	mov    0x0,%al
+    24de:	6a 03                	push   $0x3
+    24e0:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    24e6:	53                   	push   %ebx
+    24e7:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    24ed:	8b 45 08             	mov    0x8(%ebp),%eax
+    24f0:	c6 85 7d ff ff ff 27 	movb   $0x27,-0x83(%ebp)
+    24f7:	88 85 7e ff ff ff    	mov    %al,-0x82(%ebp)
+    24fd:	e8 fc ff ff ff       	call   24fe <FPLineSP+0x2f>
+    2502:	83 c4 10             	add    $0x10,%esp
+    2505:	85 c0                	test   %eax,%eax
+    2507:	78 0c                	js     2515 <FPLineSP+0x46>
+    2509:	83 ec 0c             	sub    $0xc,%esp
+    250c:	53                   	push   %ebx
+    250d:	e8 fc ff ff ff       	call   250e <FPLineSP+0x3f>
+    2512:	83 c4 10             	add    $0x10,%esp
+    2515:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2518:	c9                   	leave  
+    2519:	c3                   	ret    
+
+0000251a <FPCplInd>:
+    251a:	55                   	push   %ebp
+    251b:	89 e5                	mov    %esp,%ebp
+    251d:	53                   	push   %ebx
+    251e:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2524:	a0 00 00 00 00       	mov    0x0,%al
+    2529:	6a 02                	push   $0x2
+    252b:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2531:	53                   	push   %ebx
+    2532:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2538:	c6 85 7d ff ff ff 25 	movb   $0x25,-0x83(%ebp)
+    253f:	e8 fc ff ff ff       	call   2540 <FPCplInd+0x26>
+    2544:	83 c4 10             	add    $0x10,%esp
+    2547:	85 c0                	test   %eax,%eax
+    2549:	78 0c                	js     2557 <FPCplInd+0x3d>
+    254b:	83 ec 0c             	sub    $0xc,%esp
+    254e:	53                   	push   %ebx
+    254f:	e8 fc ff ff ff       	call   2550 <FPCplInd+0x36>
+    2554:	83 c4 10             	add    $0x10,%esp
+    2557:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    255a:	c9                   	leave  
+    255b:	c3                   	ret    
+
+0000255c <FPCplOnLine>:
+    255c:	55                   	push   %ebp
+    255d:	89 e5                	mov    %esp,%ebp
+    255f:	53                   	push   %ebx
+    2560:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2566:	a0 00 00 00 00       	mov    0x0,%al
+    256b:	6a 02                	push   $0x2
+    256d:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2573:	53                   	push   %ebx
+    2574:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    257a:	c6 85 7d ff ff ff 24 	movb   $0x24,-0x83(%ebp)
+    2581:	e8 fc ff ff ff       	call   2582 <FPCplOnLine+0x26>
+    2586:	83 c4 10             	add    $0x10,%esp
+    2589:	85 c0                	test   %eax,%eax
+    258b:	78 0c                	js     2599 <FPCplOnLine+0x3d>
+    258d:	83 ec 0c             	sub    $0xc,%esp
+    2590:	53                   	push   %ebx
+    2591:	e8 fc ff ff ff       	call   2592 <FPCplOnLine+0x36>
+    2596:	83 c4 10             	add    $0x10,%esp
+    2599:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    259c:	c9                   	leave  
+    259d:	c3                   	ret    
+
+0000259e <FPDiscount>:
+    259e:	55                   	push   %ebp
+    259f:	83 c9 ff             	or     $0xffffffff,%ecx
+    25a2:	89 e5                	mov    %esp,%ebp
+    25a4:	57                   	push   %edi
+    25a5:	56                   	push   %esi
+    25a6:	53                   	push   %ebx
+    25a7:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    25ad:	8a 45 10             	mov    0x10(%ebp),%al
+    25b0:	8b 55 08             	mov    0x8(%ebp),%edx
+    25b3:	8b 7d 14             	mov    0x14(%ebp),%edi
+    25b6:	c6 85 75 ff ff ff 23 	movb   $0x23,-0x8b(%ebp)
+    25bd:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+    25c0:	88 85 73 ff ff ff    	mov    %al,-0x8d(%ebp)
+    25c6:	a0 00 00 00 00       	mov    0x0,%al
+    25cb:	88 95 76 ff ff ff    	mov    %dl,-0x8a(%ebp)
+    25d1:	88 85 74 ff ff ff    	mov    %al,-0x8c(%ebp)
+    25d7:	31 c0                	xor    %eax,%eax
+    25d9:	f2 ae                	repnz scas %es:(%edi),%al
+    25db:	84 d2                	test   %dl,%dl
+    25dd:	f7 d1                	not    %ecx
+    25df:	8d 41 ff             	lea    -0x1(%ecx),%eax
+    25e2:	74 05                	je     25e9 <FPDiscount+0x4b>
+    25e4:	80 fa 02             	cmp    $0x2,%dl
+    25e7:	75 06                	jne    25ef <FPDiscount+0x51>
+    25e9:	81 cb 00 00 00 04    	or     $0x4000000,%ebx
+    25ef:	80 bd 73 ff ff ff 00 	cmpb   $0x0,-0x8d(%ebp)
+    25f6:	74 06                	je     25fe <FPDiscount+0x60>
+    25f8:	81 cb 00 00 00 80    	or     $0x80000000,%ebx
+    25fe:	89 9d 77 ff ff ff    	mov    %ebx,-0x89(%ebp)
+    2604:	31 d2                	xor    %edx,%edx
+    2606:	88 85 7b ff ff ff    	mov    %al,-0x85(%ebp)
+    260c:	8d 9d 74 ff ff ff    	lea    -0x8c(%ebp),%ebx
+    2612:	eb 0b                	jmp    261f <FPDiscount+0x81>
+    2614:	8b 4d 14             	mov    0x14(%ebp),%ecx
+    2617:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    261a:	88 44 13 08          	mov    %al,0x8(%ebx,%edx,1)
+    261e:	42                   	inc    %edx
+    261f:	8a 8d 7b ff ff ff    	mov    -0x85(%ebp),%cl
+    2625:	0f b6 c1             	movzbl %cl,%eax
+    2628:	39 c2                	cmp    %eax,%edx
+    262a:	7c e8                	jl     2614 <FPDiscount+0x76>
+    262c:	50                   	push   %eax
+    262d:	50                   	push   %eax
+    262e:	8d 41 08             	lea    0x8(%ecx),%eax
+    2631:	0f b6 c0             	movzbl %al,%eax
+    2634:	50                   	push   %eax
+    2635:	53                   	push   %ebx
+    2636:	e8 fc ff ff ff       	call   2637 <FPDiscount+0x99>
+    263b:	83 c4 10             	add    $0x10,%esp
+    263e:	85 c0                	test   %eax,%eax
+    2640:	78 0c                	js     264e <FPDiscount+0xb0>
+    2642:	83 ec 0c             	sub    $0xc,%esp
+    2645:	53                   	push   %ebx
+    2646:	e8 fc ff ff ff       	call   2647 <FPDiscount+0xa9>
+    264b:	83 c4 10             	add    $0x10,%esp
+    264e:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    2651:	5b                   	pop    %ebx
+    2652:	5e                   	pop    %esi
+    2653:	5f                   	pop    %edi
+    2654:	5d                   	pop    %ebp
+    2655:	c3                   	ret    
+
+00002656 <FPGetBox>:
+    2656:	55                   	push   %ebp
+    2657:	89 e5                	mov    %esp,%ebp
+    2659:	56                   	push   %esi
+    265a:	53                   	push   %ebx
+    265b:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    2661:	a0 00 00 00 00       	mov    0x0,%al
+    2666:	6a 02                	push   $0x2
+    2668:	8d b5 78 ff ff ff    	lea    -0x88(%ebp),%esi
+    266e:	56                   	push   %esi
+    266f:	88 85 78 ff ff ff    	mov    %al,-0x88(%ebp)
+    2675:	c6 85 79 ff ff ff 21 	movb   $0x21,-0x87(%ebp)
+    267c:	e8 fc ff ff ff       	call   267d <FPGetBox+0x27>
+    2681:	83 c4 10             	add    $0x10,%esp
+    2684:	85 c0                	test   %eax,%eax
+    2686:	89 c1                	mov    %eax,%ecx
+    2688:	78 3b                	js     26c5 <FPGetBox+0x6f>
+    268a:	83 ec 0c             	sub    $0xc,%esp
+    268d:	56                   	push   %esi
+    268e:	e8 fc ff ff ff       	call   268f <FPGetBox+0x39>
+    2693:	83 c4 10             	add    $0x10,%esp
+    2696:	85 c0                	test   %eax,%eax
+    2698:	89 c1                	mov    %eax,%ecx
+    269a:	78 29                	js     26c5 <FPGetBox+0x6f>
+    269c:	31 db                	xor    %ebx,%ebx
+    269e:	31 c9                	xor    %ecx,%ecx
+    26a0:	eb 17                	jmp    26b9 <FPGetBox+0x63>
+    26a2:	c1 e2 08             	shl    $0x8,%edx
+    26a5:	40                   	inc    %eax
+    26a6:	39 d8                	cmp    %ebx,%eax
+    26a8:	7e f8                	jle    26a2 <FPGetBox+0x4c>
+    26aa:	0f b6 04 1e          	movzbl (%esi,%ebx,1),%eax
+    26ae:	43                   	inc    %ebx
+    26af:	0f af d0             	imul   %eax,%edx
+    26b2:	01 d1                	add    %edx,%ecx
+    26b4:	83 fb 05             	cmp    $0x5,%ebx
+    26b7:	74 0c                	je     26c5 <FPGetBox+0x6f>
+    26b9:	ba 01 00 00 00       	mov    $0x1,%edx
+    26be:	b8 01 00 00 00       	mov    $0x1,%eax
+    26c3:	eb e1                	jmp    26a6 <FPGetBox+0x50>
+    26c5:	8d 65 f8             	lea    -0x8(%ebp),%esp
+    26c8:	89 c8                	mov    %ecx,%eax
+    26ca:	5b                   	pop    %ebx
+    26cb:	5e                   	pop    %esi
+    26cc:	5d                   	pop    %ebp
+    26cd:	c3                   	ret    
+
+000026ce <FPPrintVer>:
+    26ce:	55                   	push   %ebp
+    26cf:	89 e5                	mov    %esp,%ebp
+    26d1:	53                   	push   %ebx
+    26d2:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    26d8:	a0 00 00 00 00       	mov    0x0,%al
+    26dd:	6a 02                	push   $0x2
+    26df:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    26e5:	53                   	push   %ebx
+    26e6:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    26ec:	c6 85 7d ff ff ff 20 	movb   $0x20,-0x83(%ebp)
+    26f3:	e8 fc ff ff ff       	call   26f4 <FPPrintVer+0x26>
+    26f8:	83 c4 10             	add    $0x10,%esp
+    26fb:	85 c0                	test   %eax,%eax
+    26fd:	78 0c                	js     270b <FPPrintVer+0x3d>
+    26ff:	83 ec 0c             	sub    $0xc,%esp
+    2702:	53                   	push   %ebx
+    2703:	e8 fc ff ff ff       	call   2704 <FPPrintVer+0x36>
+    2708:	83 c4 10             	add    $0x10,%esp
+    270b:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    270e:	c9                   	leave  
+    270f:	c3                   	ret    
+
+00002710 <FPPrintCopy>:
+    2710:	55                   	push   %ebp
+    2711:	89 e5                	mov    %esp,%ebp
+    2713:	53                   	push   %ebx
+    2714:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    271a:	a0 00 00 00 00       	mov    0x0,%al
+    271f:	6a 02                	push   $0x2
+    2721:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2727:	53                   	push   %ebx
+    2728:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    272e:	c6 85 7d ff ff ff 1e 	movb   $0x1e,-0x83(%ebp)
+    2735:	e8 fc ff ff ff       	call   2736 <FPPrintCopy+0x26>
+    273a:	83 c4 10             	add    $0x10,%esp
+    273d:	85 c0                	test   %eax,%eax
+    273f:	78 0c                	js     274d <FPPrintCopy+0x3d>
+    2741:	83 ec 0c             	sub    $0xc,%esp
+    2744:	53                   	push   %ebx
+    2745:	e8 fc ff ff ff       	call   2746 <FPPrintCopy+0x36>
+    274a:	83 c4 10             	add    $0x10,%esp
+    274d:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2750:	c9                   	leave  
+    2751:	c3                   	ret    
+
+00002752 <FPOpenBox>:
+    2752:	55                   	push   %ebp
+    2753:	89 e5                	mov    %esp,%ebp
+    2755:	53                   	push   %ebx
+    2756:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    275c:	a0 00 00 00 00       	mov    0x0,%al
+    2761:	6a 02                	push   $0x2
+    2763:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2769:	53                   	push   %ebx
+    276a:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2770:	c6 85 7d ff ff ff 1d 	movb   $0x1d,-0x83(%ebp)
+    2777:	e8 fc ff ff ff       	call   2778 <FPOpenBox+0x26>
+    277c:	83 c4 10             	add    $0x10,%esp
+    277f:	85 c0                	test   %eax,%eax
+    2781:	78 0c                	js     278f <FPOpenBox+0x3d>
+    2783:	83 ec 0c             	sub    $0xc,%esp
+    2786:	53                   	push   %ebx
+    2787:	e8 fc ff ff ff       	call   2788 <FPOpenBox+0x36>
+    278c:	83 c4 10             	add    $0x10,%esp
+    278f:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2792:	c9                   	leave  
+    2793:	c3                   	ret    
+
+00002794 <FPSendCustomer>:
+    2794:	55                   	push   %ebp
+    2795:	89 e5                	mov    %esp,%ebp
+    2797:	57                   	push   %edi
+    2798:	53                   	push   %ebx
+    2799:	81 ec 90 00 00 00    	sub    $0x90,%esp
+    279f:	a0 00 00 00 00       	mov    0x0,%al
+    27a4:	80 7d 08 00          	cmpb   $0x0,0x8(%ebp)
+    27a8:	8b 7d 0c             	mov    0xc(%ebp),%edi
+    27ab:	8d 9d 78 ff ff ff    	lea    -0x88(%ebp),%ebx
+    27b1:	c6 85 79 ff ff ff 1b 	movb   $0x1b,-0x87(%ebp)
+    27b8:	0f 95 85 7a ff ff ff 	setne  -0x86(%ebp)
+    27bf:	83 c9 ff             	or     $0xffffffff,%ecx
+    27c2:	31 d2                	xor    %edx,%edx
+    27c4:	88 85 78 ff ff ff    	mov    %al,-0x88(%ebp)
+    27ca:	31 c0                	xor    %eax,%eax
+    27cc:	f2 ae                	repnz scas %es:(%edi),%al
+    27ce:	f7 d1                	not    %ecx
+    27d0:	49                   	dec    %ecx
+    27d1:	88 8d 7b ff ff ff    	mov    %cl,-0x85(%ebp)
+    27d7:	eb 0b                	jmp    27e4 <FPSendCustomer+0x50>
+    27d9:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+    27dc:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    27df:	88 44 13 04          	mov    %al,0x4(%ebx,%edx,1)
+    27e3:	42                   	inc    %edx
+    27e4:	8a 8d 7b ff ff ff    	mov    -0x85(%ebp),%cl
+    27ea:	0f b6 c1             	movzbl %cl,%eax
+    27ed:	39 c2                	cmp    %eax,%edx
+    27ef:	7c e8                	jl     27d9 <FPSendCustomer+0x45>
+    27f1:	50                   	push   %eax
+    27f2:	50                   	push   %eax
+    27f3:	8d 41 04             	lea    0x4(%ecx),%eax
+    27f6:	0f b6 c0             	movzbl %al,%eax
+    27f9:	50                   	push   %eax
+    27fa:	53                   	push   %ebx
+    27fb:	e8 fc ff ff ff       	call   27fc <FPSendCustomer+0x68>
+    2800:	83 c4 10             	add    $0x10,%esp
+    2803:	85 c0                	test   %eax,%eax
+    2805:	78 0c                	js     2813 <FPSendCustomer+0x7f>
+    2807:	83 ec 0c             	sub    $0xc,%esp
+    280a:	53                   	push   %ebx
+    280b:	e8 fc ff ff ff       	call   280c <FPSendCustomer+0x78>
+    2810:	83 c4 10             	add    $0x10,%esp
+    2813:	8d 65 f8             	lea    -0x8(%ebp),%esp
+    2816:	5b                   	pop    %ebx
+    2817:	5f                   	pop    %edi
+    2818:	5d                   	pop    %ebp
+    2819:	c3                   	ret    
+
+0000281a <FPGive>:
+    281a:	55                   	push   %ebp
+    281b:	89 e5                	mov    %esp,%ebp
+    281d:	53                   	push   %ebx
+    281e:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2824:	a0 00 00 00 00       	mov    0x0,%al
+    2829:	6a 06                	push   $0x6
+    282b:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2831:	53                   	push   %ebx
+    2832:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2838:	8b 45 08             	mov    0x8(%ebp),%eax
+    283b:	c6 85 7d ff ff ff 18 	movb   $0x18,-0x83(%ebp)
+    2842:	89 85 7e ff ff ff    	mov    %eax,-0x82(%ebp)
+    2848:	e8 fc ff ff ff       	call   2849 <FPGive+0x2f>
+    284d:	83 c4 10             	add    $0x10,%esp
+    2850:	85 c0                	test   %eax,%eax
+    2852:	78 0c                	js     2860 <FPGive+0x46>
+    2854:	83 ec 0c             	sub    $0xc,%esp
+    2857:	53                   	push   %ebx
+    2858:	e8 fc ff ff ff       	call   2859 <FPGive+0x3f>
+    285d:	83 c4 10             	add    $0x10,%esp
+    2860:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2863:	c9                   	leave  
+    2864:	c3                   	ret    
+
+00002865 <FPSetString>:
+    2865:	55                   	push   %ebp
+    2866:	89 e5                	mov    %esp,%ebp
+    2868:	57                   	push   %edi
+    2869:	53                   	push   %ebx
+    286a:	81 ec 90 00 00 00    	sub    $0x90,%esp
+    2870:	a0 00 00 00 00       	mov    0x0,%al
+    2875:	80 7d 08 00          	cmpb   $0x0,0x8(%ebp)
+    2879:	8b 7d 0c             	mov    0xc(%ebp),%edi
+    287c:	8d 9d 78 ff ff ff    	lea    -0x88(%ebp),%ebx
+    2882:	c6 85 79 ff ff ff 17 	movb   $0x17,-0x87(%ebp)
+    2889:	0f 95 85 7a ff ff ff 	setne  -0x86(%ebp)
+    2890:	83 c9 ff             	or     $0xffffffff,%ecx
+    2893:	31 d2                	xor    %edx,%edx
+    2895:	88 85 78 ff ff ff    	mov    %al,-0x88(%ebp)
+    289b:	31 c0                	xor    %eax,%eax
+    289d:	f2 ae                	repnz scas %es:(%edi),%al
+    289f:	f7 d1                	not    %ecx
+    28a1:	49                   	dec    %ecx
+    28a2:	88 8d 7b ff ff ff    	mov    %cl,-0x85(%ebp)
+    28a8:	eb 0b                	jmp    28b5 <FPSetString+0x50>
+    28aa:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+    28ad:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    28b0:	88 44 13 04          	mov    %al,0x4(%ebx,%edx,1)
+    28b4:	42                   	inc    %edx
+    28b5:	8a 8d 7b ff ff ff    	mov    -0x85(%ebp),%cl
+    28bb:	0f b6 c1             	movzbl %cl,%eax
+    28be:	39 c2                	cmp    %eax,%edx
+    28c0:	7c e8                	jl     28aa <FPSetString+0x45>
+    28c2:	50                   	push   %eax
+    28c3:	50                   	push   %eax
+    28c4:	8d 41 04             	lea    0x4(%ecx),%eax
+    28c7:	0f b6 c0             	movzbl %al,%eax
+    28ca:	50                   	push   %eax
+    28cb:	53                   	push   %ebx
+    28cc:	e8 fc ff ff ff       	call   28cd <FPSetString+0x68>
+    28d1:	83 c4 10             	add    $0x10,%esp
+    28d4:	85 c0                	test   %eax,%eax
+    28d6:	78 0c                	js     28e4 <FPSetString+0x7f>
+    28d8:	83 ec 0c             	sub    $0xc,%esp
+    28db:	53                   	push   %ebx
+    28dc:	e8 fc ff ff ff       	call   28dd <FPSetString+0x78>
+    28e1:	83 c4 10             	add    $0x10,%esp
+    28e4:	8d 65 f8             	lea    -0x8(%ebp),%esp
+    28e7:	5b                   	pop    %ebx
+    28e8:	5f                   	pop    %edi
+    28e9:	5d                   	pop    %ebp
+    28ea:	c3                   	ret    
+
+000028eb <FPPayment>:
+    28eb:	55                   	push   %ebp
+    28ec:	83 c9 ff             	or     $0xffffffff,%ecx
+    28ef:	89 e5                	mov    %esp,%ebp
+    28f1:	57                   	push   %edi
+    28f2:	53                   	push   %ebx
+    28f3:	81 ec 90 00 00 00    	sub    $0x90,%esp
+    28f9:	8a 45 10             	mov    0x10(%ebp),%al
+    28fc:	8b 7d 14             	mov    0x14(%ebp),%edi
+    28ff:	c6 85 79 ff ff ff 14 	movb   $0x14,-0x87(%ebp)
+    2906:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+    2909:	8a 55 08             	mov    0x8(%ebp),%dl
+    290c:	88 85 77 ff ff ff    	mov    %al,-0x89(%ebp)
+    2912:	a0 00 00 00 00       	mov    0x0,%al
+    2917:	88 85 78 ff ff ff    	mov    %al,-0x88(%ebp)
+    291d:	31 c0                	xor    %eax,%eax
+    291f:	f2 ae                	repnz scas %es:(%edi),%al
+    2921:	f7 d1                	not    %ecx
+    2923:	88 c8                	mov    %cl,%al
+    2925:	fe c8                	dec    %al
+    2927:	74 03                	je     292c <FPPayment+0x41>
+    2929:	83 ca 80             	or     $0xffffff80,%edx
+    292c:	80 bd 77 ff ff ff 00 	cmpb   $0x0,-0x89(%ebp)
+    2933:	74 06                	je     293b <FPPayment+0x50>
+    2935:	81 cb 00 00 00 80    	or     $0x80000000,%ebx
+    293b:	88 95 7a ff ff ff    	mov    %dl,-0x86(%ebp)
+    2941:	31 d2                	xor    %edx,%edx
+    2943:	89 9d 7b ff ff ff    	mov    %ebx,-0x85(%ebp)
+    2949:	8d 9d 78 ff ff ff    	lea    -0x88(%ebp),%ebx
+    294f:	88 85 7f ff ff ff    	mov    %al,-0x81(%ebp)
+    2955:	eb 0b                	jmp    2962 <FPPayment+0x77>
+    2957:	8b 4d 14             	mov    0x14(%ebp),%ecx
+    295a:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    295d:	88 44 13 08          	mov    %al,0x8(%ebx,%edx,1)
+    2961:	42                   	inc    %edx
+    2962:	8a 8d 7f ff ff ff    	mov    -0x81(%ebp),%cl
+    2968:	0f b6 c1             	movzbl %cl,%eax
+    296b:	39 c2                	cmp    %eax,%edx
+    296d:	7c e8                	jl     2957 <FPPayment+0x6c>
+    296f:	50                   	push   %eax
+    2970:	50                   	push   %eax
+    2971:	8d 41 08             	lea    0x8(%ecx),%eax
+    2974:	0f b6 c0             	movzbl %al,%eax
+    2977:	50                   	push   %eax
+    2978:	53                   	push   %ebx
+    2979:	e8 fc ff ff ff       	call   297a <FPPayment+0x8f>
+    297e:	83 c4 10             	add    $0x10,%esp
+    2981:	85 c0                	test   %eax,%eax
+    2983:	78 0c                	js     2991 <FPPayment+0xa6>
+    2985:	83 ec 0c             	sub    $0xc,%esp
+    2988:	53                   	push   %ebx
+    2989:	e8 fc ff ff ff       	call   298a <FPPayment+0x9f>
+    298e:	83 c4 10             	add    $0x10,%esp
+    2991:	8d 65 f8             	lea    -0x8(%ebp),%esp
+    2994:	5b                   	pop    %ebx
+    2995:	5f                   	pop    %edi
+    2996:	5d                   	pop    %ebp
+    2997:	c3                   	ret    
+
+00002998 <FPSale>:
+    2998:	55                   	push   %ebp
+    2999:	31 d2                	xor    %edx,%edx
+    299b:	89 e5                	mov    %esp,%ebp
+    299d:	57                   	push   %edi
+    299e:	56                   	push   %esi
+    299f:	53                   	push   %ebx
+    29a0:	81 ec 9c 00 00 00    	sub    $0x9c,%esp
+    29a6:	a0 00 00 00 00       	mov    0x0,%al
+    29ab:	8b 75 14             	mov    0x14(%ebp),%esi
+    29ae:	8d 9d 70 ff ff ff    	lea    -0x90(%ebp),%ebx
+    29b4:	c6 85 71 ff ff ff 12 	movb   $0x12,-0x8f(%ebp)
+    29bb:	8d 4d f0             	lea    -0x10(%ebp),%ecx
+    29be:	88 85 70 ff ff ff    	mov    %al,-0x90(%ebp)
+    29c4:	8b 45 08             	mov    0x8(%ebp),%eax
+    29c7:	89 85 72 ff ff ff    	mov    %eax,-0x8e(%ebp)
+    29cd:	8b 45 0c             	mov    0xc(%ebp),%eax
+    29d0:	88 85 75 ff ff ff    	mov    %al,-0x8b(%ebp)
+    29d6:	8b 45 10             	mov    0x10(%ebp),%eax
+    29d9:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    29dc:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    29df:	88 44 13 06          	mov    %al,0x6(%ebx,%edx,1)
+    29e3:	42                   	inc    %edx
+    29e4:	83 fa 04             	cmp    $0x4,%edx
+    29e7:	75 f3                	jne    29dc <FPSale+0x44>
+    29e9:	8b 7d 18             	mov    0x18(%ebp),%edi
+    29ec:	8d 46 80             	lea    -0x80(%esi),%eax
+    29ef:	83 c9 ff             	or     $0xffffffff,%ecx
+    29f2:	88 85 7a ff ff ff    	mov    %al,-0x86(%ebp)
+    29f8:	31 c0                	xor    %eax,%eax
+    29fa:	30 d2                	xor    %dl,%dl
+    29fc:	8d 9d 70 ff ff ff    	lea    -0x90(%ebp),%ebx
+    2a02:	f2 ae                	repnz scas %es:(%edi),%al
+    2a04:	f7 d1                	not    %ecx
+    2a06:	49                   	dec    %ecx
+    2a07:	88 8d 7b ff ff ff    	mov    %cl,-0x85(%ebp)
+    2a0d:	eb 0b                	jmp    2a1a <FPSale+0x82>
+    2a0f:	8b 4d 18             	mov    0x18(%ebp),%ecx
+    2a12:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    2a15:	88 44 13 0c          	mov    %al,0xc(%ebx,%edx,1)
+    2a19:	42                   	inc    %edx
+    2a1a:	0f b6 8d 7b ff ff ff 	movzbl -0x85(%ebp),%ecx
+    2a21:	39 ca                	cmp    %ecx,%edx
+    2a23:	7c ea                	jl     2a0f <FPSale+0x77>
+    2a25:	8b 45 1c             	mov    0x1c(%ebp),%eax
+    2a28:	88 84 0d 7c ff ff ff 	mov    %al,-0x84(%ebp,%ecx,1)
+    2a2f:	0f b6 95 7b ff ff ff 	movzbl -0x85(%ebp),%edx
+    2a36:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    2a39:	8a 45 f1             	mov    -0xf(%ebp),%al
+    2a3c:	88 84 15 7d ff ff ff 	mov    %al,-0x83(%ebp,%edx,1)
+    2a43:	8a 45 f2             	mov    -0xe(%ebp),%al
+    2a46:	0f b6 95 7b ff ff ff 	movzbl -0x85(%ebp),%edx
+    2a4d:	88 84 15 7e ff ff ff 	mov    %al,-0x82(%ebp,%edx,1)
+    2a54:	8a 45 f3             	mov    -0xd(%ebp),%al
+    2a57:	0f b6 95 7b ff ff ff 	movzbl -0x85(%ebp),%edx
+    2a5e:	88 84 15 7f ff ff ff 	mov    %al,-0x81(%ebp,%edx,1)
+    2a65:	50                   	push   %eax
+    2a66:	50                   	push   %eax
+    2a67:	8a 85 7b ff ff ff    	mov    -0x85(%ebp),%al
+    2a6d:	83 c0 10             	add    $0x10,%eax
+    2a70:	0f b6 c0             	movzbl %al,%eax
+    2a73:	50                   	push   %eax
+    2a74:	53                   	push   %ebx
+    2a75:	e8 fc ff ff ff       	call   2a76 <FPSale+0xde>
+    2a7a:	83 c4 10             	add    $0x10,%esp
+    2a7d:	85 c0                	test   %eax,%eax
+    2a7f:	78 0c                	js     2a8d <FPSale+0xf5>
+    2a81:	83 ec 0c             	sub    $0xc,%esp
+    2a84:	53                   	push   %ebx
+    2a85:	e8 fc ff ff ff       	call   2a86 <FPSale+0xee>
+    2a8a:	83 c4 10             	add    $0x10,%esp
+    2a8d:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    2a90:	5b                   	pop    %ebx
+    2a91:	5e                   	pop    %esi
+    2a92:	5f                   	pop    %edi
+    2a93:	5d                   	pop    %ebp
+    2a94:	c3                   	ret    
+
+00002a95 <FPAvans>:
+    2a95:	55                   	push   %ebp
+    2a96:	89 e5                	mov    %esp,%ebp
+    2a98:	53                   	push   %ebx
+    2a99:	83 ec 1c             	sub    $0x1c,%esp
+    2a9c:	a0 00 00 00 00       	mov    0x0,%al
+    2aa1:	6a 06                	push   $0x6
+    2aa3:	8d 5d f2             	lea    -0xe(%ebp),%ebx
+    2aa6:	53                   	push   %ebx
+    2aa7:	88 45 f2             	mov    %al,-0xe(%ebp)
+    2aaa:	8b 45 08             	mov    0x8(%ebp),%eax
+    2aad:	c6 45 f3 10          	movb   $0x10,-0xd(%ebp)
+    2ab1:	89 45 f4             	mov    %eax,-0xc(%ebp)
+    2ab4:	e8 fc ff ff ff       	call   2ab5 <FPAvans+0x20>
+    2ab9:	83 c4 10             	add    $0x10,%esp
+    2abc:	85 c0                	test   %eax,%eax
+    2abe:	78 0c                	js     2acc <FPAvans+0x37>
+    2ac0:	83 ec 0c             	sub    $0xc,%esp
+    2ac3:	53                   	push   %ebx
+    2ac4:	e8 fc ff ff ff       	call   2ac5 <FPAvans+0x30>
+    2ac9:	83 c4 10             	add    $0x10,%esp
+    2acc:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2acf:	c9                   	leave  
+    2ad0:	c3                   	ret    
+
+00002ad1 <FPResetOrder>:
+    2ad1:	55                   	push   %ebp
+    2ad2:	89 e5                	mov    %esp,%ebp
+    2ad4:	53                   	push   %ebx
+    2ad5:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2adb:	a0 00 00 00 00       	mov    0x0,%al
+    2ae0:	6a 02                	push   $0x2
+    2ae2:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2ae8:	53                   	push   %ebx
+    2ae9:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2aef:	c6 85 7d ff ff ff 0f 	movb   $0xf,-0x83(%ebp)
+    2af6:	e8 fc ff ff ff       	call   2af7 <FPResetOrder+0x26>
+    2afb:	83 c4 10             	add    $0x10,%esp
+    2afe:	85 c0                	test   %eax,%eax
+    2b00:	78 0c                	js     2b0e <FPResetOrder+0x3d>
+    2b02:	83 ec 0c             	sub    $0xc,%esp
+    2b05:	53                   	push   %ebx
+    2b06:	e8 fc ff ff ff       	call   2b07 <FPResetOrder+0x36>
+    2b0b:	83 c4 10             	add    $0x10,%esp
+    2b0e:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2b11:	c9                   	leave  
+    2b12:	c3                   	ret    
+
+00002b13 <FPLineFeed>:
+    2b13:	55                   	push   %ebp
+    2b14:	89 e5                	mov    %esp,%ebp
+    2b16:	53                   	push   %ebx
+    2b17:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2b1d:	a0 00 00 00 00       	mov    0x0,%al
+    2b22:	6a 02                	push   $0x2
+    2b24:	8d 9d 7c ff ff ff    	lea    -0x84(%ebp),%ebx
+    2b2a:	53                   	push   %ebx
+    2b2b:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2b31:	c6 85 7d ff ff ff 0e 	movb   $0xe,-0x83(%ebp)
+    2b38:	e8 fc ff ff ff       	call   2b39 <FPLineFeed+0x26>
+    2b3d:	83 c4 10             	add    $0x10,%esp
+    2b40:	85 c0                	test   %eax,%eax
+    2b42:	78 0c                	js     2b50 <FPLineFeed+0x3d>
+    2b44:	83 ec 0c             	sub    $0xc,%esp
+    2b47:	53                   	push   %ebx
+    2b48:	e8 fc ff ff ff       	call   2b49 <FPLineFeed+0x36>
+    2b4d:	83 c4 10             	add    $0x10,%esp
+    2b50:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2b53:	c9                   	leave  
+    2b54:	c3                   	ret    
+
+00002b55 <FPComment>:
+    2b55:	55                   	push   %ebp
+    2b56:	89 e5                	mov    %esp,%ebp
+    2b58:	57                   	push   %edi
+    2b59:	56                   	push   %esi
+    2b5a:	53                   	push   %ebx
+    2b5b:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2b61:	8a 55 0c             	mov    0xc(%ebp),%dl
+    2b64:	a0 00 00 00 00       	mov    0x0,%al
+    2b69:	c6 85 75 ff ff ff 0b 	movb   $0xb,-0x8b(%ebp)
+    2b70:	84 d2                	test   %dl,%dl
+    2b72:	88 85 74 ff ff ff    	mov    %al,-0x8c(%ebp)
+    2b78:	74 11                	je     2b8b <FPComment+0x36>
+    2b7a:	8b 7d 08             	mov    0x8(%ebp),%edi
+    2b7d:	31 c0                	xor    %eax,%eax
+    2b7f:	83 c9 ff             	or     $0xffffffff,%ecx
+    2b82:	f2 ae                	repnz scas %es:(%edi),%al
+    2b84:	f7 d1                	not    %ecx
+    2b86:	83 c1 7f             	add    $0x7f,%ecx
+    2b89:	eb 0d                	jmp    2b98 <FPComment+0x43>
+    2b8b:	8b 7d 08             	mov    0x8(%ebp),%edi
+    2b8e:	83 c9 ff             	or     $0xffffffff,%ecx
+    2b91:	88 d0                	mov    %dl,%al
+    2b93:	f2 ae                	repnz scas %es:(%edi),%al
+    2b95:	f7 d1                	not    %ecx
+    2b97:	49                   	dec    %ecx
+    2b98:	88 8d 76 ff ff ff    	mov    %cl,-0x8a(%ebp)
+    2b9e:	31 d2                	xor    %edx,%edx
+    2ba0:	83 ce ff             	or     $0xffffffff,%esi
+    2ba3:	8d 9d 74 ff ff ff    	lea    -0x8c(%ebp),%ebx
+    2ba9:	eb 0b                	jmp    2bb6 <FPComment+0x61>
+    2bab:	8b 4d 08             	mov    0x8(%ebp),%ecx
+    2bae:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    2bb1:	88 44 13 03          	mov    %al,0x3(%ebx,%edx,1)
+    2bb5:	42                   	inc    %edx
+    2bb6:	8b 7d 08             	mov    0x8(%ebp),%edi
+    2bb9:	31 c0                	xor    %eax,%eax
+    2bbb:	89 f1                	mov    %esi,%ecx
+    2bbd:	f2 ae                	repnz scas %es:(%edi),%al
+    2bbf:	f7 d1                	not    %ecx
+    2bc1:	49                   	dec    %ecx
+    2bc2:	39 ca                	cmp    %ecx,%edx
+    2bc4:	72 e5                	jb     2bab <FPComment+0x56>
+    2bc6:	8d 42 03             	lea    0x3(%edx),%eax
+    2bc9:	52                   	push   %edx
+    2bca:	0f b6 c0             	movzbl %al,%eax
+    2bcd:	52                   	push   %edx
+    2bce:	50                   	push   %eax
+    2bcf:	53                   	push   %ebx
+    2bd0:	e8 fc ff ff ff       	call   2bd1 <FPComment+0x7c>
+    2bd5:	83 c4 10             	add    $0x10,%esp
+    2bd8:	85 c0                	test   %eax,%eax
+    2bda:	78 0c                	js     2be8 <FPComment+0x93>
+    2bdc:	83 ec 0c             	sub    $0xc,%esp
+    2bdf:	53                   	push   %ebx
+    2be0:	e8 fc ff ff ff       	call   2be1 <FPComment+0x8c>
+    2be5:	83 c4 10             	add    $0x10,%esp
+    2be8:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    2beb:	5b                   	pop    %ebx
+    2bec:	5e                   	pop    %esi
+    2bed:	5f                   	pop    %edi
+    2bee:	5d                   	pop    %ebp
+    2bef:	c3                   	ret    
+
+00002bf0 <FPPayMoney>:
+    2bf0:	55                   	push   %ebp
+    2bf1:	31 d2                	xor    %edx,%edx
+    2bf3:	89 e5                	mov    %esp,%ebp
+    2bf5:	57                   	push   %edi
+    2bf6:	56                   	push   %esi
+    2bf7:	53                   	push   %ebx
+    2bf8:	81 ec 9c 00 00 00    	sub    $0x9c,%esp
+    2bfe:	a0 00 00 00 00       	mov    0x0,%al
+    2c03:	8b 75 14             	mov    0x14(%ebp),%esi
+    2c06:	8d 9d 70 ff ff ff    	lea    -0x90(%ebp),%ebx
+    2c0c:	c6 85 71 ff ff ff 08 	movb   $0x8,-0x8f(%ebp)
+    2c13:	8d 4d f0             	lea    -0x10(%ebp),%ecx
+    2c16:	88 85 70 ff ff ff    	mov    %al,-0x90(%ebp)
+    2c1c:	8b 45 08             	mov    0x8(%ebp),%eax
+    2c1f:	89 85 72 ff ff ff    	mov    %eax,-0x8e(%ebp)
+    2c25:	8b 45 0c             	mov    0xc(%ebp),%eax
+    2c28:	88 85 75 ff ff ff    	mov    %al,-0x8b(%ebp)
+    2c2e:	8b 45 10             	mov    0x10(%ebp),%eax
+    2c31:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    2c34:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    2c37:	88 44 13 06          	mov    %al,0x6(%ebx,%edx,1)
+    2c3b:	42                   	inc    %edx
+    2c3c:	83 fa 04             	cmp    $0x4,%edx
+    2c3f:	75 f3                	jne    2c34 <FPPayMoney+0x44>
+    2c41:	8b 7d 18             	mov    0x18(%ebp),%edi
+    2c44:	8d 46 80             	lea    -0x80(%esi),%eax
+    2c47:	83 c9 ff             	or     $0xffffffff,%ecx
+    2c4a:	88 85 7a ff ff ff    	mov    %al,-0x86(%ebp)
+    2c50:	31 c0                	xor    %eax,%eax
+    2c52:	30 d2                	xor    %dl,%dl
+    2c54:	8d 9d 70 ff ff ff    	lea    -0x90(%ebp),%ebx
+    2c5a:	f2 ae                	repnz scas %es:(%edi),%al
+    2c5c:	f7 d1                	not    %ecx
+    2c5e:	49                   	dec    %ecx
+    2c5f:	88 8d 7b ff ff ff    	mov    %cl,-0x85(%ebp)
+    2c65:	eb 0b                	jmp    2c72 <FPPayMoney+0x82>
+    2c67:	8b 4d 18             	mov    0x18(%ebp),%ecx
+    2c6a:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    2c6d:	88 44 13 0c          	mov    %al,0xc(%ebx,%edx,1)
+    2c71:	42                   	inc    %edx
+    2c72:	0f b6 8d 7b ff ff ff 	movzbl -0x85(%ebp),%ecx
+    2c79:	39 ca                	cmp    %ecx,%edx
+    2c7b:	7c ea                	jl     2c67 <FPPayMoney+0x77>
+    2c7d:	8b 45 1c             	mov    0x1c(%ebp),%eax
+    2c80:	88 84 0d 7c ff ff ff 	mov    %al,-0x84(%ebp,%ecx,1)
+    2c87:	0f b6 95 7b ff ff ff 	movzbl -0x85(%ebp),%edx
+    2c8e:	89 45 f0             	mov    %eax,-0x10(%ebp)
+    2c91:	8a 45 f1             	mov    -0xf(%ebp),%al
+    2c94:	51                   	push   %ecx
+    2c95:	51                   	push   %ecx
+    2c96:	88 84 15 7d ff ff ff 	mov    %al,-0x83(%ebp,%edx,1)
+    2c9d:	8a 45 f2             	mov    -0xe(%ebp),%al
+    2ca0:	0f b6 95 7b ff ff ff 	movzbl -0x85(%ebp),%edx
+    2ca7:	88 84 15 7e ff ff ff 	mov    %al,-0x82(%ebp,%edx,1)
+    2cae:	8a 45 f3             	mov    -0xd(%ebp),%al
+    2cb1:	0f b6 95 7b ff ff ff 	movzbl -0x85(%ebp),%edx
+    2cb8:	88 84 15 7f ff ff ff 	mov    %al,-0x81(%ebp,%edx,1)
+    2cbf:	8a 85 7b ff ff ff    	mov    -0x85(%ebp),%al
+    2cc5:	83 c0 10             	add    $0x10,%eax
+    2cc8:	0f b6 c0             	movzbl %al,%eax
+    2ccb:	50                   	push   %eax
+    2ccc:	53                   	push   %ebx
+    2ccd:	e8 fc ff ff ff       	call   2cce <FPPayMoney+0xde>
+    2cd2:	83 c4 10             	add    $0x10,%esp
+    2cd5:	85 c0                	test   %eax,%eax
+    2cd7:	78 0c                	js     2ce5 <FPPayMoney+0xf5>
+    2cd9:	83 ec 0c             	sub    $0xc,%esp
+    2cdc:	53                   	push   %ebx
+    2cdd:	e8 fc ff ff ff       	call   2cde <FPPayMoney+0xee>
+    2ce2:	83 c4 10             	add    $0x10,%esp
+    2ce5:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    2ce8:	5b                   	pop    %ebx
+    2ce9:	5e                   	pop    %esi
+    2cea:	5f                   	pop    %edi
+    2ceb:	5d                   	pop    %ebp
+    2cec:	c3                   	ret    
+
+00002ced <FPSetCashier>:
+    2ced:	55                   	push   %ebp
+    2cee:	89 e5                	mov    %esp,%ebp
+    2cf0:	57                   	push   %edi
+    2cf1:	56                   	push   %esi
+    2cf2:	53                   	push   %ebx
+    2cf3:	81 ec 8c 00 00 00    	sub    $0x8c,%esp
+    2cf9:	a0 00 00 00 00       	mov    0x0,%al
+    2cfe:	8a 55 14             	mov    0x14(%ebp),%dl
+    2d01:	c6 85 75 ff ff ff 06 	movb   $0x6,-0x8b(%ebp)
+    2d08:	88 85 74 ff ff ff    	mov    %al,-0x8c(%ebp)
+    2d0e:	8b 45 08             	mov    0x8(%ebp),%eax
+    2d11:	84 d2                	test   %dl,%dl
+    2d13:	88 85 76 ff ff ff    	mov    %al,-0x8a(%ebp)
+    2d19:	8b 45 10             	mov    0x10(%ebp),%eax
+    2d1c:	66 89 85 77 ff ff ff 	mov    %ax,-0x89(%ebp)
+    2d23:	74 09                	je     2d2e <FPSetCashier+0x41>
+    2d25:	c6 85 79 ff ff ff ff 	movb   $0xff,-0x87(%ebp)
+    2d2c:	eb 13                	jmp    2d41 <FPSetCashier+0x54>
+    2d2e:	8b 7d 0c             	mov    0xc(%ebp),%edi
+    2d31:	83 c9 ff             	or     $0xffffffff,%ecx
+    2d34:	88 d0                	mov    %dl,%al
+    2d36:	f2 ae                	repnz scas %es:(%edi),%al
+    2d38:	f7 d1                	not    %ecx
+    2d3a:	49                   	dec    %ecx
+    2d3b:	88 8d 79 ff ff ff    	mov    %cl,-0x87(%ebp)
+    2d41:	31 d2                	xor    %edx,%edx
+    2d43:	83 ce ff             	or     $0xffffffff,%esi
+    2d46:	8d 9d 74 ff ff ff    	lea    -0x8c(%ebp),%ebx
+    2d4c:	eb 0b                	jmp    2d59 <FPSetCashier+0x6c>
+    2d4e:	8b 4d 0c             	mov    0xc(%ebp),%ecx
+    2d51:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    2d54:	88 44 13 06          	mov    %al,0x6(%ebx,%edx,1)
+    2d58:	42                   	inc    %edx
+    2d59:	8b 7d 0c             	mov    0xc(%ebp),%edi
+    2d5c:	31 c0                	xor    %eax,%eax
+    2d5e:	89 f1                	mov    %esi,%ecx
+    2d60:	f2 ae                	repnz scas %es:(%edi),%al
+    2d62:	f7 d1                	not    %ecx
+    2d64:	49                   	dec    %ecx
+    2d65:	39 ca                	cmp    %ecx,%edx
+    2d67:	72 e5                	jb     2d4e <FPSetCashier+0x61>
+    2d69:	8d 42 06             	lea    0x6(%edx),%eax
+    2d6c:	56                   	push   %esi
+    2d6d:	0f b6 c0             	movzbl %al,%eax
+    2d70:	56                   	push   %esi
+    2d71:	50                   	push   %eax
+    2d72:	53                   	push   %ebx
+    2d73:	e8 fc ff ff ff       	call   2d74 <FPSetCashier+0x87>
+    2d78:	83 c4 10             	add    $0x10,%esp
+    2d7b:	85 c0                	test   %eax,%eax
+    2d7d:	78 0c                	js     2d8b <FPSetCashier+0x9e>
+    2d7f:	83 ec 0c             	sub    $0xc,%esp
+    2d82:	53                   	push   %ebx
+    2d83:	e8 fc ff ff ff       	call   2d84 <FPSetCashier+0x97>
+    2d88:	83 c4 10             	add    $0x10,%esp
+    2d8b:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    2d8e:	5b                   	pop    %ebx
+    2d8f:	5e                   	pop    %esi
+    2d90:	5f                   	pop    %edi
+    2d91:	5d                   	pop    %ebp
+    2d92:	c3                   	ret    
+
+00002d93 <FPSetPassword>:
+    2d93:	55                   	push   %ebp
+    2d94:	83 c9 ff             	or     $0xffffffff,%ecx
+    2d97:	89 e5                	mov    %esp,%ebp
+    2d99:	31 d2                	xor    %edx,%edx
+    2d9b:	57                   	push   %edi
+    2d9c:	53                   	push   %ebx
+    2d9d:	81 ec 90 00 00 00    	sub    $0x90,%esp
+    2da3:	a0 00 00 00 00       	mov    0x0,%al
+    2da8:	8b 7d 14             	mov    0x14(%ebp),%edi
+    2dab:	8d 9d 78 ff ff ff    	lea    -0x88(%ebp),%ebx
+    2db1:	c6 85 79 ff ff ff 05 	movb   $0x5,-0x87(%ebp)
+    2db8:	88 85 78 ff ff ff    	mov    %al,-0x88(%ebp)
+    2dbe:	8b 45 08             	mov    0x8(%ebp),%eax
+    2dc1:	66 89 85 7a ff ff ff 	mov    %ax,-0x86(%ebp)
+    2dc8:	8b 45 10             	mov    0x10(%ebp),%eax
+    2dcb:	88 85 7c ff ff ff    	mov    %al,-0x84(%ebp)
+    2dd1:	8b 45 0c             	mov    0xc(%ebp),%eax
+    2dd4:	66 89 85 7d ff ff ff 	mov    %ax,-0x83(%ebp)
+    2ddb:	31 c0                	xor    %eax,%eax
+    2ddd:	f2 ae                	repnz scas %es:(%edi),%al
+    2ddf:	f7 d1                	not    %ecx
+    2de1:	49                   	dec    %ecx
+    2de2:	88 8d 7f ff ff ff    	mov    %cl,-0x81(%ebp)
+    2de8:	eb 0b                	jmp    2df5 <FPSetPassword+0x62>
+    2dea:	8b 4d 14             	mov    0x14(%ebp),%ecx
+    2ded:	8a 04 11             	mov    (%ecx,%edx,1),%al
+    2df0:	88 44 13 08          	mov    %al,0x8(%ebx,%edx,1)
+    2df4:	42                   	inc    %edx
+    2df5:	8a 8d 7f ff ff ff    	mov    -0x81(%ebp),%cl
+    2dfb:	0f b6 c1             	movzbl %cl,%eax
+    2dfe:	39 c2                	cmp    %eax,%edx
+    2e00:	7c e8                	jl     2dea <FPSetPassword+0x57>
+    2e02:	8d 41 08             	lea    0x8(%ecx),%eax
+    2e05:	57                   	push   %edi
+    2e06:	0f b6 c0             	movzbl %al,%eax
+    2e09:	57                   	push   %edi
+    2e0a:	50                   	push   %eax
+    2e0b:	53                   	push   %ebx
+    2e0c:	e8 fc ff ff ff       	call   2e0d <FPSetPassword+0x7a>
+    2e11:	83 c4 10             	add    $0x10,%esp
+    2e14:	85 c0                	test   %eax,%eax
+    2e16:	78 0c                	js     2e24 <FPSetPassword+0x91>
+    2e18:	83 ec 0c             	sub    $0xc,%esp
+    2e1b:	53                   	push   %ebx
+    2e1c:	e8 fc ff ff ff       	call   2e1d <FPSetPassword+0x8a>
+    2e21:	83 c4 10             	add    $0x10,%esp
+    2e24:	8d 65 f8             	lea    -0x8(%ebp),%esp
+    2e27:	5b                   	pop    %ebx
+    2e28:	5f                   	pop    %edi
+    2e29:	5d                   	pop    %ebp
+    2e2a:	c3                   	ret    
+
+00002e2b <FPSetTime>:
+    2e2b:	55                   	push   %ebp
+    2e2c:	ba 05 00 00 00       	mov    $0x5,%edx
+    2e31:	89 e5                	mov    %esp,%ebp
+    2e33:	53                   	push   %ebx
+    2e34:	83 ec 04             	sub    $0x4,%esp
+    2e37:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    2e3a:	8a 44 13 fe          	mov    -0x2(%ebx,%edx,1),%al
+    2e3e:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    2e41:	4a                   	dec    %edx
+    2e42:	83 fa 01             	cmp    $0x1,%edx
+    2e45:	75 f3                	jne    2e3a <FPSetTime+0xf>
+    2e47:	a0 00 00 00 00       	mov    0x0,%al
+    2e4c:	c6 43 01 04          	movb   $0x4,0x1(%ebx)
+    2e50:	88 03                	mov    %al,(%ebx)
+    2e52:	50                   	push   %eax
+    2e53:	50                   	push   %eax
+    2e54:	6a 05                	push   $0x5
+    2e56:	53                   	push   %ebx
+    2e57:	e8 fc ff ff ff       	call   2e58 <FPSetTime+0x2d>
+    2e5c:	83 c4 10             	add    $0x10,%esp
+    2e5f:	85 c0                	test   %eax,%eax
+    2e61:	78 0c                	js     2e6f <FPSetTime+0x44>
+    2e63:	89 5d 08             	mov    %ebx,0x8(%ebp)
+    2e66:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2e69:	c9                   	leave  
+    2e6a:	e9 fc ff ff ff       	jmp    2e6b <FPSetTime+0x40>
+    2e6f:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2e72:	c9                   	leave  
+    2e73:	c3                   	ret    
+
+00002e74 <FPGetTime>:
+    2e74:	55                   	push   %ebp
+    2e75:	89 e5                	mov    %esp,%ebp
+    2e77:	53                   	push   %ebx
+    2e78:	83 ec 0c             	sub    $0xc,%esp
+    2e7b:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    2e7e:	a0 00 00 00 00       	mov    0x0,%al
+    2e83:	c6 43 01 03          	movb   $0x3,0x1(%ebx)
+    2e87:	88 03                	mov    %al,(%ebx)
+    2e89:	6a 02                	push   $0x2
+    2e8b:	53                   	push   %ebx
+    2e8c:	e8 fc ff ff ff       	call   2e8d <FPGetTime+0x19>
+    2e91:	83 c4 10             	add    $0x10,%esp
+    2e94:	85 c0                	test   %eax,%eax
+    2e96:	78 0c                	js     2ea4 <FPGetTime+0x30>
+    2e98:	89 5d 08             	mov    %ebx,0x8(%ebp)
+    2e9b:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2e9e:	c9                   	leave  
+    2e9f:	e9 fc ff ff ff       	jmp    2ea0 <FPGetTime+0x2c>
+    2ea4:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2ea7:	c9                   	leave  
+    2ea8:	c3                   	ret    
+
+00002ea9 <FPSetDate>:
+    2ea9:	55                   	push   %ebp
+    2eaa:	ba 05 00 00 00       	mov    $0x5,%edx
+    2eaf:	89 e5                	mov    %esp,%ebp
+    2eb1:	53                   	push   %ebx
+    2eb2:	83 ec 04             	sub    $0x4,%esp
+    2eb5:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    2eb8:	8a 44 13 fe          	mov    -0x2(%ebx,%edx,1),%al
+    2ebc:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    2ebf:	4a                   	dec    %edx
+    2ec0:	83 fa 01             	cmp    $0x1,%edx
+    2ec3:	75 f3                	jne    2eb8 <FPSetDate+0xf>
+    2ec5:	a0 00 00 00 00       	mov    0x0,%al
+    2eca:	c6 43 01 02          	movb   $0x2,0x1(%ebx)
+    2ece:	88 03                	mov    %al,(%ebx)
+    2ed0:	50                   	push   %eax
+    2ed1:	50                   	push   %eax
+    2ed2:	6a 05                	push   $0x5
+    2ed4:	53                   	push   %ebx
+    2ed5:	e8 fc ff ff ff       	call   2ed6 <FPSetDate+0x2d>
+    2eda:	83 c4 10             	add    $0x10,%esp
+    2edd:	85 c0                	test   %eax,%eax
+    2edf:	78 0c                	js     2eed <FPSetDate+0x44>
+    2ee1:	89 5d 08             	mov    %ebx,0x8(%ebp)
+    2ee4:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2ee7:	c9                   	leave  
+    2ee8:	e9 fc ff ff ff       	jmp    2ee9 <FPSetDate+0x40>
+    2eed:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2ef0:	c9                   	leave  
+    2ef1:	c3                   	ret    
+
+00002ef2 <FPGetDate>:
+    2ef2:	55                   	push   %ebp
+    2ef3:	89 e5                	mov    %esp,%ebp
+    2ef5:	53                   	push   %ebx
+    2ef6:	83 ec 0c             	sub    $0xc,%esp
+    2ef9:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    2efc:	a0 00 00 00 00       	mov    0x0,%al
+    2f01:	c6 43 01 01          	movb   $0x1,0x1(%ebx)
+    2f05:	88 03                	mov    %al,(%ebx)
+    2f07:	6a 02                	push   $0x2
+    2f09:	53                   	push   %ebx
+    2f0a:	e8 fc ff ff ff       	call   2f0b <FPGetDate+0x19>
+    2f0f:	83 c4 10             	add    $0x10,%esp
+    2f12:	85 c0                	test   %eax,%eax
+    2f14:	78 0c                	js     2f22 <FPGetDate+0x30>
+    2f16:	89 5d 08             	mov    %ebx,0x8(%ebp)
+    2f19:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2f1c:	c9                   	leave  
+    2f1d:	e9 fc ff ff ff       	jmp    2f1e <FPGetDate+0x2c>
+    2f22:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2f25:	c9                   	leave  
+    2f26:	c3                   	ret    
+
+00002f27 <GetMemory>:
+    2f27:	55                   	push   %ebp
+    2f28:	89 e5                	mov    %esp,%ebp
+    2f2a:	53                   	push   %ebx
+    2f2b:	83 ec 0c             	sub    $0xc,%esp
+    2f2e:	a0 00 00 00 00       	mov    0x0,%al
+    2f33:	8b 5d 14             	mov    0x14(%ebp),%ebx
+    2f36:	88 03                	mov    %al,(%ebx)
+    2f38:	c6 43 01 1c          	movb   $0x1c,0x1(%ebx)
+    2f3c:	8b 45 08             	mov    0x8(%ebp),%eax
+    2f3f:	66 89 43 02          	mov    %ax,0x2(%ebx)
+    2f43:	8b 45 0c             	mov    0xc(%ebp),%eax
+    2f46:	88 43 04             	mov    %al,0x4(%ebx)
+    2f49:	8b 45 10             	mov    0x10(%ebp),%eax
+    2f4c:	88 43 05             	mov    %al,0x5(%ebx)
+    2f4f:	6a 06                	push   $0x6
+    2f51:	53                   	push   %ebx
+    2f52:	e8 fc ff ff ff       	call   2f53 <GetMemory+0x2c>
+    2f57:	83 c4 10             	add    $0x10,%esp
+    2f5a:	85 c0                	test   %eax,%eax
+    2f5c:	78 0c                	js     2f6a <GetMemory+0x43>
+    2f5e:	89 5d 08             	mov    %ebx,0x8(%ebp)
+    2f61:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2f64:	c9                   	leave  
+    2f65:	e9 fc ff ff ff       	jmp    2f66 <GetMemory+0x3f>
+    2f6a:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    2f6d:	c9                   	leave  
+    2f6e:	c3                   	ret    
+
+00002f6f <FPGetTaxCount>:
+    2f6f:	55                   	push   %ebp
+    2f70:	89 e5                	mov    %esp,%ebp
+    2f72:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    2f78:	8d 45 80             	lea    -0x80(%ebp),%eax
+    2f7b:	50                   	push   %eax
+    2f7c:	6a 01                	push   $0x1
+    2f7e:	6a 00                	push   $0x0
+    2f80:	6a 16                	push   $0x16
+    2f82:	e8 fc ff ff ff       	call   2f83 <FPGetTaxCount+0x14>
+    2f87:	83 c4 10             	add    $0x10,%esp
+    2f8a:	85 c0                	test   %eax,%eax
+    2f8c:	78 04                	js     2f92 <FPGetTaxCount+0x23>
+    2f8e:	0f b6 45 80          	movzbl -0x80(%ebp),%eax
+    2f92:	c9                   	leave  
+    2f93:	c3                   	ret    
+
+00002f94 <FPGetTaxRate5>:
+    2f94:	55                   	push   %ebp
+    2f95:	89 e5                	mov    %esp,%ebp
+    2f97:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    2f9d:	8d 45 80             	lea    -0x80(%ebp),%eax
+    2fa0:	50                   	push   %eax
+    2fa1:	6a 02                	push   $0x2
+    2fa3:	6a 10                	push   $0x10
+    2fa5:	68 58 01 00 00       	push   $0x158
+    2faa:	e8 fc ff ff ff       	call   2fab <FPGetTaxRate5+0x17>
+    2faf:	83 c4 10             	add    $0x10,%esp
+    2fb2:	85 c0                	test   %eax,%eax
+    2fb4:	78 0d                	js     2fc3 <FPGetTaxRate5+0x2f>
+    2fb6:	0f b6 45 81          	movzbl -0x7f(%ebp),%eax
+    2fba:	0f b6 55 80          	movzbl -0x80(%ebp),%edx
+    2fbe:	c1 e0 08             	shl    $0x8,%eax
+    2fc1:	01 d0                	add    %edx,%eax
+    2fc3:	c9                   	leave  
+    2fc4:	c3                   	ret    
+
+00002fc5 <FPGetTaxRate4>:
+    2fc5:	55                   	push   %ebp
+    2fc6:	89 e5                	mov    %esp,%ebp
+    2fc8:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    2fce:	8d 45 80             	lea    -0x80(%ebp),%eax
+    2fd1:	50                   	push   %eax
+    2fd2:	6a 02                	push   $0x2
+    2fd4:	6a 10                	push   $0x10
+    2fd6:	68 56 01 00 00       	push   $0x156
+    2fdb:	e8 fc ff ff ff       	call   2fdc <FPGetTaxRate4+0x17>
+    2fe0:	83 c4 10             	add    $0x10,%esp
+    2fe3:	85 c0                	test   %eax,%eax
+    2fe5:	78 0d                	js     2ff4 <FPGetTaxRate4+0x2f>
+    2fe7:	0f b6 45 81          	movzbl -0x7f(%ebp),%eax
+    2feb:	0f b6 55 80          	movzbl -0x80(%ebp),%edx
+    2fef:	c1 e0 08             	shl    $0x8,%eax
+    2ff2:	01 d0                	add    %edx,%eax
+    2ff4:	c9                   	leave  
+    2ff5:	c3                   	ret    
+
+00002ff6 <FPGetTaxRate3>:
+    2ff6:	55                   	push   %ebp
+    2ff7:	89 e5                	mov    %esp,%ebp
+    2ff9:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    2fff:	8d 45 80             	lea    -0x80(%ebp),%eax
+    3002:	50                   	push   %eax
+    3003:	6a 02                	push   $0x2
+    3005:	6a 10                	push   $0x10
+    3007:	68 54 01 00 00       	push   $0x154
+    300c:	e8 fc ff ff ff       	call   300d <FPGetTaxRate3+0x17>
+    3011:	83 c4 10             	add    $0x10,%esp
+    3014:	85 c0                	test   %eax,%eax
+    3016:	78 0d                	js     3025 <FPGetTaxRate3+0x2f>
+    3018:	0f b6 45 81          	movzbl -0x7f(%ebp),%eax
+    301c:	0f b6 55 80          	movzbl -0x80(%ebp),%edx
+    3020:	c1 e0 08             	shl    $0x8,%eax
+    3023:	01 d0                	add    %edx,%eax
+    3025:	c9                   	leave  
+    3026:	c3                   	ret    
+
+00003027 <FPGetTaxRate2>:
+    3027:	55                   	push   %ebp
+    3028:	89 e5                	mov    %esp,%ebp
+    302a:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    3030:	8d 45 80             	lea    -0x80(%ebp),%eax
+    3033:	50                   	push   %eax
+    3034:	6a 02                	push   $0x2
+    3036:	6a 10                	push   $0x10
+    3038:	68 52 01 00 00       	push   $0x152
+    303d:	e8 fc ff ff ff       	call   303e <FPGetTaxRate2+0x17>
+    3042:	83 c4 10             	add    $0x10,%esp
+    3045:	85 c0                	test   %eax,%eax
+    3047:	78 0d                	js     3056 <FPGetTaxRate2+0x2f>
+    3049:	0f b6 45 81          	movzbl -0x7f(%ebp),%eax
+    304d:	0f b6 55 80          	movzbl -0x80(%ebp),%edx
+    3051:	c1 e0 08             	shl    $0x8,%eax
+    3054:	01 d0                	add    %edx,%eax
+    3056:	c9                   	leave  
+    3057:	c3                   	ret    
+
+00003058 <FPGetTaxRate1>:
+    3058:	55                   	push   %ebp
+    3059:	89 e5                	mov    %esp,%ebp
+    305b:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    3061:	8d 45 80             	lea    -0x80(%ebp),%eax
+    3064:	50                   	push   %eax
+    3065:	6a 02                	push   $0x2
+    3067:	6a 10                	push   $0x10
+    3069:	68 50 01 00 00       	push   $0x150
+    306e:	e8 fc ff ff ff       	call   306f <FPGetTaxRate1+0x17>
+    3073:	83 c4 10             	add    $0x10,%esp
+    3076:	85 c0                	test   %eax,%eax
+    3078:	78 0d                	js     3087 <FPGetTaxRate1+0x2f>
+    307a:	0f b6 45 81          	movzbl -0x7f(%ebp),%eax
+    307e:	0f b6 55 80          	movzbl -0x80(%ebp),%edx
+    3082:	c1 e0 08             	shl    $0x8,%eax
+    3085:	01 d0                	add    %edx,%eax
+    3087:	c9                   	leave  
+    3088:	c3                   	ret    
+
+00003089 <FPGetNumZReport>:
+    3089:	55                   	push   %ebp
+    308a:	89 e5                	mov    %esp,%ebp
+    308c:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    3092:	8d 45 80             	lea    -0x80(%ebp),%eax
+    3095:	50                   	push   %eax
+    3096:	6a 02                	push   $0x2
+    3098:	6a 10                	push   $0x10
+    309a:	6a 37                	push   $0x37
+    309c:	e8 fc ff ff ff       	call   309d <FPGetNumZReport+0x14>
+    30a1:	83 c4 10             	add    $0x10,%esp
+    30a4:	85 c0                	test   %eax,%eax
+    30a6:	78 0d                	js     30b5 <FPGetNumZReport+0x2c>
+    30a8:	0f b6 45 81          	movzbl -0x7f(%ebp),%eax
+    30ac:	0f b6 55 80          	movzbl -0x80(%ebp),%edx
+    30b0:	c1 e0 08             	shl    $0x8,%eax
+    30b3:	01 d0                	add    %edx,%eax
+    30b5:	c9                   	leave  
+    30b6:	c3                   	ret    
+
+000030b7 <FPGetDaySumPay>:
+    30b7:	55                   	push   %ebp
+    30b8:	b8 b2 30 00 00       	mov    $0x30b2,%eax
+    30bd:	89 e5                	mov    %esp,%ebp
+    30bf:	56                   	push   %esi
+    30c0:	53                   	push   %ebx
+    30c1:	83 c4 80             	add    $0xffffff80,%esp
+    30c4:	8a 55 08             	mov    0x8(%ebp),%dl
+    30c7:	80 fa 01             	cmp    $0x1,%dl
+    30ca:	74 2b                	je     30f7 <FPGetDaySumPay+0x40>
+    30cc:	80 fa 02             	cmp    $0x2,%dl
+    30cf:	b0 b7                	mov    $0xb7,%al
+    30d1:	74 24                	je     30f7 <FPGetDaySumPay+0x40>
+    30d3:	80 fa 03             	cmp    $0x3,%dl
+    30d6:	b8 bc 30 00 00       	mov    $0x30bc,%eax
+    30db:	74 1a                	je     30f7 <FPGetDaySumPay+0x40>
+    30dd:	80 fa 04             	cmp    $0x4,%dl
+    30e0:	b8 c1 30 00 00       	mov    $0x30c1,%eax
+    30e5:	74 10                	je     30f7 <FPGetDaySumPay+0x40>
+    30e7:	31 c0                	xor    %eax,%eax
+    30e9:	80 fa 05             	cmp    $0x5,%dl
+    30ec:	0f 94 c0             	sete   %al
+    30ef:	48                   	dec    %eax
+    30f0:	83 e0 e7             	and    $0xffffffe7,%eax
+    30f3:	66 05 c6 30          	add    $0x30c6,%ax
+    30f7:	8d 9d 78 ff ff ff    	lea    -0x88(%ebp),%ebx
+    30fd:	0f b7 c0             	movzwl %ax,%eax
+    3100:	53                   	push   %ebx
+    3101:	6a 05                	push   $0x5
+    3103:	6a 10                	push   $0x10
+    3105:	50                   	push   %eax
+    3106:	e8 fc ff ff ff       	call   3107 <FPGetDaySumPay+0x50>
+    310b:	83 c4 10             	add    $0x10,%esp
+    310e:	85 c0                	test   %eax,%eax
+    3110:	78 29                	js     313b <FPGetDaySumPay+0x84>
+    3112:	31 c9                	xor    %ecx,%ecx
+    3114:	eb 17                	jmp    312d <FPGetDaySumPay+0x76>
+    3116:	c1 e2 08             	shl    $0x8,%edx
+    3119:	40                   	inc    %eax
+    311a:	39 c8                	cmp    %ecx,%eax
+    311c:	7e f8                	jle    3116 <FPGetDaySumPay+0x5f>
+    311e:	0f b6 04 0b          	movzbl (%ebx,%ecx,1),%eax
+    3122:	41                   	inc    %ecx
+    3123:	0f af d0             	imul   %eax,%edx
+    3126:	01 d6                	add    %edx,%esi
+    3128:	83 f9 05             	cmp    $0x5,%ecx
+    312b:	74 0c                	je     3139 <FPGetDaySumPay+0x82>
+    312d:	ba 01 00 00 00       	mov    $0x1,%edx
+    3132:	b8 01 00 00 00       	mov    $0x1,%eax
+    3137:	eb e1                	jmp    311a <FPGetDaySumPay+0x63>
+    3139:	89 f0                	mov    %esi,%eax
+    313b:	8d 65 f8             	lea    -0x8(%ebp),%esp
+    313e:	5b                   	pop    %ebx
+    313f:	5e                   	pop    %esi
+    3140:	5d                   	pop    %ebp
+    3141:	c3                   	ret    
+
+00003142 <FPGetCheckPay>:
+    3142:	55                   	push   %ebp
+    3143:	89 e5                	mov    %esp,%ebp
+    3145:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    314b:	8d 45 80             	lea    -0x80(%ebp),%eax
+    314e:	50                   	push   %eax
+    314f:	6a 02                	push   $0x2
+    3151:	6a 10                	push   $0x10
+    3153:	68 ab 30 00 00       	push   $0x30ab
+    3158:	e8 fc ff ff ff       	call   3159 <FPGetCheckPay+0x17>
+    315d:	83 c4 10             	add    $0x10,%esp
+    3160:	85 c0                	test   %eax,%eax
+    3162:	78 0d                	js     3171 <FPGetCheckPay+0x2f>
+    3164:	0f b6 45 81          	movzbl -0x7f(%ebp),%eax
+    3168:	0f b6 55 80          	movzbl -0x80(%ebp),%edx
+    316c:	c1 e0 08             	shl    $0x8,%eax
+    316f:	01 d0                	add    %edx,%eax
+    3171:	c9                   	leave  
+    3172:	c3                   	ret    
+
+00003173 <FPGetDaySumSale>:
+    3173:	55                   	push   %ebp
+    3174:	b8 22 30 00 00       	mov    $0x3022,%eax
+    3179:	89 e5                	mov    %esp,%ebp
+    317b:	56                   	push   %esi
+    317c:	53                   	push   %ebx
+    317d:	83 c4 80             	add    $0xffffff80,%esp
+    3180:	8a 55 08             	mov    0x8(%ebp),%dl
+    3183:	80 fa 01             	cmp    $0x1,%dl
+    3186:	74 2b                	je     31b3 <FPGetDaySumSale+0x40>
+    3188:	80 fa 02             	cmp    $0x2,%dl
+    318b:	b0 27                	mov    $0x27,%al
+    318d:	74 24                	je     31b3 <FPGetDaySumSale+0x40>
+    318f:	80 fa 03             	cmp    $0x3,%dl
+    3192:	b8 2c 30 00 00       	mov    $0x302c,%eax
+    3197:	74 1a                	je     31b3 <FPGetDaySumSale+0x40>
+    3199:	80 fa 04             	cmp    $0x4,%dl
+    319c:	b8 31 30 00 00       	mov    $0x3031,%eax
+    31a1:	74 10                	je     31b3 <FPGetDaySumSale+0x40>
+    31a3:	31 c0                	xor    %eax,%eax
+    31a5:	80 fa 05             	cmp    $0x5,%dl
+    31a8:	0f 94 c0             	sete   %al
+    31ab:	48                   	dec    %eax
+    31ac:	83 e0 e7             	and    $0xffffffe7,%eax
+    31af:	66 05 36 30          	add    $0x3036,%ax
+    31b3:	8d 9d 78 ff ff ff    	lea    -0x88(%ebp),%ebx
+    31b9:	0f b7 c0             	movzwl %ax,%eax
+    31bc:	53                   	push   %ebx
+    31bd:	6a 05                	push   $0x5
+    31bf:	6a 10                	push   $0x10
+    31c1:	50                   	push   %eax
+    31c2:	e8 fc ff ff ff       	call   31c3 <FPGetDaySumSale+0x50>
+    31c7:	83 c4 10             	add    $0x10,%esp
+    31ca:	85 c0                	test   %eax,%eax
+    31cc:	78 29                	js     31f7 <FPGetDaySumSale+0x84>
+    31ce:	31 c9                	xor    %ecx,%ecx
+    31d0:	eb 17                	jmp    31e9 <FPGetDaySumSale+0x76>
+    31d2:	c1 e2 08             	shl    $0x8,%edx
+    31d5:	40                   	inc    %eax
+    31d6:	39 c8                	cmp    %ecx,%eax
+    31d8:	7e f8                	jle    31d2 <FPGetDaySumSale+0x5f>
+    31da:	0f b6 04 0b          	movzbl (%ebx,%ecx,1),%eax
+    31de:	41                   	inc    %ecx
+    31df:	0f af d0             	imul   %eax,%edx
+    31e2:	01 d6                	add    %edx,%esi
+    31e4:	83 f9 05             	cmp    $0x5,%ecx
+    31e7:	74 0c                	je     31f5 <FPGetDaySumSale+0x82>
+    31e9:	ba 01 00 00 00       	mov    $0x1,%edx
+    31ee:	b8 01 00 00 00       	mov    $0x1,%eax
+    31f3:	eb e1                	jmp    31d6 <FPGetDaySumSale+0x63>
+    31f5:	89 f0                	mov    %esi,%eax
+    31f7:	8d 65 f8             	lea    -0x8(%ebp),%esp
+    31fa:	5b                   	pop    %ebx
+    31fb:	5e                   	pop    %esi
+    31fc:	5d                   	pop    %ebp
+    31fd:	c3                   	ret    
+
+000031fe <FPGetCheckSale>:
+    31fe:	55                   	push   %ebp
+    31ff:	89 e5                	mov    %esp,%ebp
+    3201:	81 ec 88 00 00 00    	sub    $0x88,%esp
+    3207:	8d 45 80             	lea    -0x80(%ebp),%eax
+    320a:	50                   	push   %eax
+    320b:	6a 02                	push   $0x2
+    320d:	6a 10                	push   $0x10
+    320f:	68 1b 30 00 00       	push   $0x301b
+    3214:	e8 fc ff ff ff       	call   3215 <FPGetCheckSale+0x17>
+    3219:	83 c4 10             	add    $0x10,%esp
+    321c:	85 c0                	test   %eax,%eax
+    321e:	78 0d                	js     322d <FPGetCheckSale+0x2f>
+    3220:	0f b6 45 81          	movzbl -0x7f(%ebp),%eax
+    3224:	0f b6 55 80          	movzbl -0x80(%ebp),%edx
+    3228:	c1 e0 08             	shl    $0x8,%eax
+    322b:	01 d0                	add    %edx,%eax
+    322d:	c9                   	leave  
+    322e:	c3                   	ret    
+
+0000322f <GetStatus>:
+    322f:	55                   	push   %ebp
+    3230:	89 e5                	mov    %esp,%ebp
+    3232:	53                   	push   %ebx
+    3233:	83 ec 0c             	sub    $0xc,%esp
+    3236:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    3239:	a0 00 00 00 00       	mov    0x0,%al
+    323e:	c6 43 01 00          	movb   $0x0,0x1(%ebx)
+    3242:	88 03                	mov    %al,(%ebx)
+    3244:	6a 02                	push   $0x2
+    3246:	53                   	push   %ebx
+    3247:	e8 fc ff ff ff       	call   3248 <GetStatus+0x19>
+    324c:	83 c4 10             	add    $0x10,%esp
+    324f:	85 c0                	test   %eax,%eax
+    3251:	78 0c                	js     325f <GetStatus+0x30>
+    3253:	89 5d 08             	mov    %ebx,0x8(%ebp)
+    3256:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    3259:	c9                   	leave  
+    325a:	e9 fc ff ff ff       	jmp    325b <GetStatus+0x2c>
+    325f:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    3262:	c9                   	leave  
+    3263:	c3                   	ret    
+
+00003264 <GetRegistrationTime>:
+    3264:	55                   	push   %ebp
+    3265:	89 e5                	mov    %esp,%ebp
+    3267:	53                   	push   %ebx
+    3268:	83 ec 10             	sub    $0x10,%esp
+    326b:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    326e:	53                   	push   %ebx
+    326f:	e8 fc ff ff ff       	call   3270 <GetRegistrationTime+0xc>
+    3274:	83 c4 10             	add    $0x10,%esp
+    3277:	85 c0                	test   %eax,%eax
+    3279:	78 14                	js     328f <GetRegistrationTime+0x2b>
+    327b:	8a 43 18             	mov    0x18(%ebx),%al
+    327e:	c6 43 03 00          	movb   $0x0,0x3(%ebx)
+    3282:	88 03                	mov    %al,(%ebx)
+    3284:	8a 43 19             	mov    0x19(%ebx),%al
+    3287:	88 43 01             	mov    %al,0x1(%ebx)
+    328a:	b8 03 00 00 00       	mov    $0x3,%eax
+    328f:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    3292:	c9                   	leave  
+    3293:	c3                   	ret    
+
+00003294 <GetRegistrationDate>:
+    3294:	55                   	push   %ebp
+    3295:	89 e5                	mov    %esp,%ebp
+    3297:	53                   	push   %ebx
+    3298:	83 ec 10             	sub    $0x10,%esp
+    329b:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    329e:	53                   	push   %ebx
+    329f:	e8 fc ff ff ff       	call   32a0 <GetRegistrationDate+0xc>
+    32a4:	83 c4 10             	add    $0x10,%esp
+    32a7:	85 c0                	test   %eax,%eax
+    32a9:	78 1a                	js     32c5 <GetRegistrationDate+0x31>
+    32ab:	8a 43 15             	mov    0x15(%ebx),%al
+    32ae:	c6 43 04 00          	movb   $0x0,0x4(%ebx)
+    32b2:	88 03                	mov    %al,(%ebx)
+    32b4:	8a 43 16             	mov    0x16(%ebx),%al
+    32b7:	88 43 01             	mov    %al,0x1(%ebx)
+    32ba:	8a 43 17             	mov    0x17(%ebx),%al
+    32bd:	88 43 02             	mov    %al,0x2(%ebx)
+    32c0:	b8 04 00 00 00       	mov    $0x4,%eax
+    32c5:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    32c8:	c9                   	leave  
+    32c9:	c3                   	ret    
+
+000032ca <GetHardwareVersion>:
+    32ca:	55                   	push   %ebp
+    32cb:	89 e5                	mov    %esp,%ebp
+    32cd:	53                   	push   %ebx
+    32ce:	83 ec 10             	sub    $0x10,%esp
+    32d1:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    32d4:	53                   	push   %ebx
+    32d5:	e8 fc ff ff ff       	call   32d6 <GetHardwareVersion+0xc>
+    32da:	83 c4 10             	add    $0x10,%esp
+    32dd:	85 c0                	test   %eax,%eax
+    32df:	78 1b                	js     32fc <GetHardwareVersion+0x32>
+    32e1:	31 d2                	xor    %edx,%edx
+    32e3:	8d 0c 03             	lea    (%ebx,%eax,1),%ecx
+    32e6:	8a 44 11 fb          	mov    -0x5(%ecx,%edx,1),%al
+    32ea:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    32ed:	42                   	inc    %edx
+    32ee:	83 fa 05             	cmp    $0x5,%edx
+    32f1:	75 f3                	jne    32e6 <GetHardwareVersion+0x1c>
+    32f3:	c6 43 05 00          	movb   $0x0,0x5(%ebx)
+    32f7:	b8 05 00 00 00       	mov    $0x5,%eax
+    32fc:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    32ff:	c9                   	leave  
+    3300:	c3                   	ret    
+
+00003301 <GetHeadString4>:
+    3301:	55                   	push   %ebp
+    3302:	89 e5                	mov    %esp,%ebp
+    3304:	53                   	push   %ebx
+    3305:	83 ec 10             	sub    $0x10,%esp
+    3308:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    330b:	53                   	push   %ebx
+    330c:	e8 fc ff ff ff       	call   330d <GetHeadString4+0xc>
+    3311:	83 c4 10             	add    $0x10,%esp
+    3314:	85 c0                	test   %eax,%eax
+    3316:	89 c2                	mov    %eax,%edx
+    3318:	78 2f                	js     3349 <GetHeadString4+0x48>
+    331a:	0f b6 43 24          	movzbl 0x24(%ebx),%eax
+    331e:	0f b6 54 03 25       	movzbl 0x25(%ebx,%eax,1),%edx
+    3323:	8d 54 02 26          	lea    0x26(%edx,%eax,1),%edx
+    3327:	0f b6 04 13          	movzbl (%ebx,%edx,1),%eax
+    332b:	8d 44 10 01          	lea    0x1(%eax,%edx,1),%eax
+    332f:	31 d2                	xor    %edx,%edx
+    3331:	8d 0c 03             	lea    (%ebx,%eax,1),%ecx
+    3334:	eb 08                	jmp    333e <GetHeadString4+0x3d>
+    3336:	8a 44 11 01          	mov    0x1(%ecx,%edx,1),%al
+    333a:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    333d:	42                   	inc    %edx
+    333e:	0f b6 01             	movzbl (%ecx),%eax
+    3341:	39 c2                	cmp    %eax,%edx
+    3343:	7c f1                	jl     3336 <GetHeadString4+0x35>
+    3345:	c6 04 13 00          	movb   $0x0,(%ebx,%edx,1)
+    3349:	89 d0                	mov    %edx,%eax
+    334b:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    334e:	c9                   	leave  
+    334f:	c3                   	ret    
+
+00003350 <GetHeadString3>:
+    3350:	55                   	push   %ebp
+    3351:	89 e5                	mov    %esp,%ebp
+    3353:	53                   	push   %ebx
+    3354:	83 ec 10             	sub    $0x10,%esp
+    3357:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    335a:	53                   	push   %ebx
+    335b:	e8 fc ff ff ff       	call   335c <GetHeadString3+0xc>
+    3360:	83 c4 10             	add    $0x10,%esp
+    3363:	85 c0                	test   %eax,%eax
+    3365:	89 c2                	mov    %eax,%edx
+    3367:	78 27                	js     3390 <GetHeadString3+0x40>
+    3369:	0f b6 53 24          	movzbl 0x24(%ebx),%edx
+    336d:	0f b6 44 13 25       	movzbl 0x25(%ebx,%edx,1),%eax
+    3372:	8d 44 10 26          	lea    0x26(%eax,%edx,1),%eax
+    3376:	31 d2                	xor    %edx,%edx
+    3378:	8d 0c 03             	lea    (%ebx,%eax,1),%ecx
+    337b:	eb 08                	jmp    3385 <GetHeadString3+0x35>
+    337d:	8a 44 11 01          	mov    0x1(%ecx,%edx,1),%al
+    3381:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    3384:	42                   	inc    %edx
+    3385:	0f b6 01             	movzbl (%ecx),%eax
+    3388:	39 c2                	cmp    %eax,%edx
+    338a:	7c f1                	jl     337d <GetHeadString3+0x2d>
+    338c:	c6 04 13 00          	movb   $0x0,(%ebx,%edx,1)
+    3390:	89 d0                	mov    %edx,%eax
+    3392:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    3395:	c9                   	leave  
+    3396:	c3                   	ret    
+
+00003397 <GetHeadString2>:
+    3397:	55                   	push   %ebp
+    3398:	89 e5                	mov    %esp,%ebp
+    339a:	56                   	push   %esi
+    339b:	53                   	push   %ebx
+    339c:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    339f:	83 ec 0c             	sub    $0xc,%esp
+    33a2:	53                   	push   %ebx
+    33a3:	e8 fc ff ff ff       	call   33a4 <GetHeadString2+0xd>
+    33a8:	83 c4 10             	add    $0x10,%esp
+    33ab:	85 c0                	test   %eax,%eax
+    33ad:	89 c2                	mov    %eax,%edx
+    33af:	78 22                	js     33d3 <GetHeadString2+0x3c>
+    33b1:	0f b6 43 24          	movzbl 0x24(%ebx),%eax
+    33b5:	31 d2                	xor    %edx,%edx
+    33b7:	8d 70 25             	lea    0x25(%eax),%esi
+    33ba:	8d 4c 03 26          	lea    0x26(%ebx,%eax,1),%ecx
+    33be:	eb 07                	jmp    33c7 <GetHeadString2+0x30>
+    33c0:	8a 01                	mov    (%ecx),%al
+    33c2:	41                   	inc    %ecx
+    33c3:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    33c6:	42                   	inc    %edx
+    33c7:	0f b6 04 33          	movzbl (%ebx,%esi,1),%eax
+    33cb:	39 c2                	cmp    %eax,%edx
+    33cd:	7c f1                	jl     33c0 <GetHeadString2+0x29>
+    33cf:	c6 04 13 00          	movb   $0x0,(%ebx,%edx,1)
+    33d3:	8d 65 f8             	lea    -0x8(%ebp),%esp
+    33d6:	89 d0                	mov    %edx,%eax
+    33d8:	5b                   	pop    %ebx
+    33d9:	5e                   	pop    %esi
+    33da:	5d                   	pop    %ebp
+    33db:	c3                   	ret    
+
+000033dc <GetHeadString1>:
+    33dc:	55                   	push   %ebp
+    33dd:	89 e5                	mov    %esp,%ebp
+    33df:	53                   	push   %ebx
+    33e0:	83 ec 10             	sub    $0x10,%esp
+    33e3:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    33e6:	53                   	push   %ebx
+    33e7:	e8 fc ff ff ff       	call   33e8 <GetHeadString1+0xc>
+    33ec:	83 c4 10             	add    $0x10,%esp
+    33ef:	85 c0                	test   %eax,%eax
+    33f1:	89 c2                	mov    %eax,%edx
+    33f3:	78 18                	js     340d <GetHeadString1+0x31>
+    33f5:	31 d2                	xor    %edx,%edx
+    33f7:	eb 08                	jmp    3401 <GetHeadString1+0x25>
+    33f9:	8a 44 13 25          	mov    0x25(%ebx,%edx,1),%al
+    33fd:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    3400:	42                   	inc    %edx
+    3401:	0f b6 43 24          	movzbl 0x24(%ebx),%eax
+    3405:	39 c2                	cmp    %eax,%edx
+    3407:	7e f0                	jle    33f9 <GetHeadString1+0x1d>
+    3409:	c6 04 13 00          	movb   $0x0,(%ebx,%edx,1)
+    340d:	89 d0                	mov    %edx,%eax
+    340f:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    3412:	c9                   	leave  
+    3413:	c3                   	ret    
+
+00003414 <GetFiscalNumber>:
+    3414:	55                   	push   %ebp
+    3415:	89 e5                	mov    %esp,%ebp
+    3417:	53                   	push   %ebx
+    3418:	83 ec 10             	sub    $0x10,%esp
+    341b:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    341e:	53                   	push   %ebx
+    341f:	e8 fc ff ff ff       	call   3420 <GetFiscalNumber+0xc>
+    3424:	83 c4 10             	add    $0x10,%esp
+    3427:	85 c0                	test   %eax,%eax
+    3429:	89 c2                	mov    %eax,%edx
+    342b:	78 13                	js     3440 <GetFiscalNumber+0x2c>
+    342d:	31 d2                	xor    %edx,%edx
+    342f:	8a 44 13 1a          	mov    0x1a(%ebx,%edx,1),%al
+    3433:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    3436:	42                   	inc    %edx
+    3437:	83 fa 0a             	cmp    $0xa,%edx
+    343a:	75 f3                	jne    342f <GetFiscalNumber+0x1b>
+    343c:	c6 43 0a 00          	movb   $0x0,0xa(%ebx)
+    3440:	89 d0                	mov    %edx,%eax
+    3442:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    3445:	c9                   	leave  
+    3446:	c3                   	ret    
+
+00003447 <GetSerialNumber>:
+    3447:	55                   	push   %ebp
+    3448:	89 e5                	mov    %esp,%ebp
+    344a:	53                   	push   %ebx
+    344b:	83 ec 10             	sub    $0x10,%esp
+    344e:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    3451:	53                   	push   %ebx
+    3452:	e8 fc ff ff ff       	call   3453 <GetSerialNumber+0xc>
+    3457:	83 c4 10             	add    $0x10,%esp
+    345a:	85 c0                	test   %eax,%eax
+    345c:	89 c2                	mov    %eax,%edx
+    345e:	78 13                	js     3473 <GetSerialNumber+0x2c>
+    3460:	31 d2                	xor    %edx,%edx
+    3462:	8a 44 13 02          	mov    0x2(%ebx,%edx,1),%al
+    3466:	88 04 13             	mov    %al,(%ebx,%edx,1)
+    3469:	42                   	inc    %edx
+    346a:	83 fa 13             	cmp    $0x13,%edx
+    346d:	75 f3                	jne    3462 <GetSerialNumber+0x1b>
+    346f:	c6 43 13 00          	movb   $0x0,0x13(%ebx)
+    3473:	89 d0                	mov    %edx,%eax
+    3475:	8b 5d fc             	mov    -0x4(%ebp),%ebx
+    3478:	c9                   	leave  
+    3479:	c3                   	ret    
+
+0000347a <GetRegistrationRegim>:
+    347a:	55                   	push   %ebp
+    347b:	89 e5                	mov    %esp,%ebp
+    347d:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    3483:	8d 45 80             	lea    -0x80(%ebp),%eax
+    3486:	50                   	push   %eax
+    3487:	e8 fc ff ff ff       	call   3488 <GetRegistrationRegim+0xe>
+    348c:	83 c4 10             	add    $0x10,%esp
+    348f:	85 c0                	test   %eax,%eax
+    3491:	78 09                	js     349c <GetRegistrationRegim+0x22>
+    3493:	31 c0                	xor    %eax,%eax
+    3495:	f6 45 81 40          	testb  $0x40,-0x7f(%ebp)
+    3499:	0f 95 c0             	setne  %al
+    349c:	c9                   	leave  
+    349d:	c3                   	ret    
+
+0000349e <GetErrorCommandStatus>:
+    349e:	55                   	push   %ebp
+    349f:	89 e5                	mov    %esp,%ebp
+    34a1:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    34a7:	8d 45 80             	lea    -0x80(%ebp),%eax
+    34aa:	50                   	push   %eax
+    34ab:	e8 fc ff ff ff       	call   34ac <GetErrorCommandStatus+0xe>
+    34b0:	83 c4 10             	add    $0x10,%esp
+    34b3:	85 c0                	test   %eax,%eax
+    34b5:	78 09                	js     34c0 <GetErrorCommandStatus+0x22>
+    34b7:	31 c0                	xor    %eax,%eax
+    34b9:	f6 45 81 20          	testb  $0x20,-0x7f(%ebp)
+    34bd:	0f 95 c0             	setne  %al
+    34c0:	c9                   	leave  
+    34c1:	c3                   	ret    
+
+000034c2 <GetFiscalizationStatus>:
+    34c2:	55                   	push   %ebp
+    34c3:	89 e5                	mov    %esp,%ebp
+    34c5:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    34cb:	8d 45 80             	lea    -0x80(%ebp),%eax
+    34ce:	50                   	push   %eax
+    34cf:	e8 fc ff ff ff       	call   34d0 <GetFiscalizationStatus+0xe>
+    34d4:	83 c4 10             	add    $0x10,%esp
+    34d7:	85 c0                	test   %eax,%eax
+    34d9:	78 09                	js     34e4 <GetFiscalizationStatus+0x22>
+    34db:	31 c0                	xor    %eax,%eax
+    34dd:	f6 45 81 10          	testb  $0x10,-0x7f(%ebp)
+    34e1:	0f 95 c0             	setne  %al
+    34e4:	c9                   	leave  
+    34e5:	c3                   	ret    
+
+000034e6 <GetNalogChangeStatus>:
+    34e6:	55                   	push   %ebp
+    34e7:	89 e5                	mov    %esp,%ebp
+    34e9:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    34ef:	8d 45 80             	lea    -0x80(%ebp),%eax
+    34f2:	50                   	push   %eax
+    34f3:	e8 fc ff ff ff       	call   34f4 <GetNalogChangeStatus+0xe>
+    34f8:	83 c4 10             	add    $0x10,%esp
+    34fb:	85 c0                	test   %eax,%eax
+    34fd:	78 09                	js     3508 <GetNalogChangeStatus+0x22>
+    34ff:	31 c0                	xor    %eax,%eax
+    3501:	f6 45 81 02          	testb  $0x2,-0x7f(%ebp)
+    3505:	0f 95 c0             	setne  %al
+    3508:	c9                   	leave  
+    3509:	c3                   	ret    
+
+0000350a <GetDisplayStatus>:
+    350a:	55                   	push   %ebp
+    350b:	89 e5                	mov    %esp,%ebp
+    350d:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    3513:	8d 45 80             	lea    -0x80(%ebp),%eax
+    3516:	50                   	push   %eax
+    3517:	e8 fc ff ff ff       	call   3518 <GetDisplayStatus+0xe>
+    351c:	83 c4 10             	add    $0x10,%esp
+    351f:	85 c0                	test   %eax,%eax
+    3521:	78 0e                	js     3531 <GetDisplayStatus+0x27>
+    3523:	8a 45 80             	mov    -0x80(%ebp),%al
+    3526:	83 e0 80             	and    $0xffffff80,%eax
+    3529:	3c 80                	cmp    $0x80,%al
+    352b:	0f 94 c0             	sete   %al
+    352e:	0f b6 c0             	movzbl %al,%eax
+    3531:	c9                   	leave  
+    3532:	c3                   	ret    
+
+00003533 <GetCheckOpenedStatus>:
+    3533:	55                   	push   %ebp
+    3534:	89 e5                	mov    %esp,%ebp
+    3536:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    353c:	8d 45 80             	lea    -0x80(%ebp),%eax
+    353f:	50                   	push   %eax
+    3540:	e8 fc ff ff ff       	call   3541 <GetCheckOpenedStatus+0xe>
+    3545:	83 c4 10             	add    $0x10,%esp
+    3548:	85 c0                	test   %eax,%eax
+    354a:	78 09                	js     3555 <GetCheckOpenedStatus+0x22>
+    354c:	31 c0                	xor    %eax,%eax
+    354e:	f6 45 80 40          	testb  $0x40,-0x80(%ebp)
+    3552:	0f 95 c0             	setne  %al
+    3555:	c9                   	leave  
+    3556:	c3                   	ret    
+
+00003557 <GetSmenaStatus>:
+    3557:	55                   	push   %ebp
+    3558:	89 e5                	mov    %esp,%ebp
+    355a:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    3560:	8d 45 80             	lea    -0x80(%ebp),%eax
+    3563:	50                   	push   %eax
+    3564:	e8 fc ff ff ff       	call   3565 <GetSmenaStatus+0xe>
+    3569:	83 c4 10             	add    $0x10,%esp
+    356c:	85 c0                	test   %eax,%eax
+    356e:	78 09                	js     3579 <GetSmenaStatus+0x22>
+    3570:	31 c0                	xor    %eax,%eax
+    3572:	f6 45 80 20          	testb  $0x20,-0x80(%ebp)
+    3576:	0f 95 c0             	setne  %al
+    3579:	c9                   	leave  
+    357a:	c3                   	ret    
+
+0000357b <GetNalogStatus>:
+    357b:	55                   	push   %ebp
+    357c:	89 e5                	mov    %esp,%ebp
+    357e:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    3584:	8d 45 80             	lea    -0x80(%ebp),%eax
+    3587:	50                   	push   %eax
+    3588:	e8 fc ff ff ff       	call   3589 <GetNalogStatus+0xe>
+    358d:	83 c4 10             	add    $0x10,%esp
+    3590:	85 c0                	test   %eax,%eax
+    3592:	78 09                	js     359d <GetNalogStatus+0x22>
+    3594:	31 c0                	xor    %eax,%eax
+    3596:	f6 45 80 10          	testb  $0x10,-0x80(%ebp)
+    359a:	0f 95 c0             	setne  %al
+    359d:	c9                   	leave  
+    359e:	c3                   	ret    
+
+0000359f <GetCheckStatus>:
+    359f:	55                   	push   %ebp
+    35a0:	89 e5                	mov    %esp,%ebp
+    35a2:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    35a8:	8d 45 80             	lea    -0x80(%ebp),%eax
+    35ab:	50                   	push   %eax
+    35ac:	e8 fc ff ff ff       	call   35ad <GetCheckStatus+0xe>
+    35b1:	83 c4 10             	add    $0x10,%esp
+    35b4:	85 c0                	test   %eax,%eax
+    35b6:	78 09                	js     35c1 <GetCheckStatus+0x22>
+    35b8:	31 c0                	xor    %eax,%eax
+    35ba:	f6 45 80 08          	testb  $0x8,-0x80(%ebp)
+    35be:	0f 95 c0             	setne  %al
+    35c1:	c9                   	leave  
+    35c2:	c3                   	ret    
+
+000035c3 <GetBoxStatus>:
+    35c3:	55                   	push   %ebp
+    35c4:	89 e5                	mov    %esp,%ebp
+    35c6:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    35cc:	8d 45 80             	lea    -0x80(%ebp),%eax
+    35cf:	50                   	push   %eax
+    35d0:	e8 fc ff ff ff       	call   35d1 <GetBoxStatus+0xe>
+    35d5:	83 c4 10             	add    $0x10,%esp
+    35d8:	85 c0                	test   %eax,%eax
+    35da:	78 09                	js     35e5 <GetBoxStatus+0x22>
+    35dc:	31 c0                	xor    %eax,%eax
+    35de:	f6 45 80 04          	testb  $0x4,-0x80(%ebp)
+    35e2:	0f 95 c0             	setne  %al
+    35e5:	c9                   	leave  
+    35e6:	c3                   	ret    
+
+000035e7 <FPInit>:
+    35e7:	55                   	push   %ebp
+    35e8:	89 e5                	mov    %esp,%ebp
+    35ea:	57                   	push   %edi
+    35eb:	56                   	push   %esi
+    35ec:	53                   	push   %ebx
+    35ed:	83 ec 54             	sub    $0x54,%esp
+    35f0:	8b 5d 08             	mov    0x8(%ebp),%ebx
+    35f3:	8b 75 0c             	mov    0xc(%ebp),%esi
+    35f6:	53                   	push   %ebx
+    35f7:	68 be 37 00 00       	push   $0x37be
+    35fc:	e8 fc ff ff ff       	call   35fd <FPInit+0x16>
+    3601:	5f                   	pop    %edi
+    3602:	58                   	pop    %eax
+    3603:	6a 02                	push   $0x2
+    3605:	53                   	push   %ebx
+    3606:	e8 fc ff ff ff       	call   3607 <FPInit+0x20>
+    360b:	83 c4 10             	add    $0x10,%esp
+    360e:	83 f8 ff             	cmp    $0xffffffff,%eax
+    3611:	a3 00 00 00 00       	mov    %eax,0x0
+    3616:	75 0f                	jne    3627 <FPInit+0x40>
+    3618:	83 ec 0c             	sub    $0xc,%esp
+    361b:	68 d2 37 00 00       	push   $0x37d2
+    3620:	e8 fc ff ff ff       	call   3621 <FPInit+0x3a>
+    3625:	eb 5f                	jmp    3686 <FPInit+0x9f>
+    3627:	51                   	push   %ecx
+    3628:	6a 00                	push   $0x0
+    362a:	6a 04                	push   $0x4
+    362c:	8d 5d b8             	lea    -0x48(%ebp),%ebx
+    362f:	50                   	push   %eax
+    3630:	89 df                	mov    %ebx,%edi
+    3632:	e8 fc ff ff ff       	call   3633 <FPInit+0x4c>
+    3637:	31 c0                	xor    %eax,%eax
+    3639:	b9 0f 00 00 00       	mov    $0xf,%ecx
+    363e:	f3 ab                	rep stos %eax,%es:(%edi)
+    3640:	8b 45 10             	mov    0x10(%ebp),%eax
+    3643:	c7 45 c0 f0 08 00 00 	movl   $0x8f0,-0x40(%ebp)
+    364a:	c7 45 b8 04 00 00 00 	movl   $0x4,-0x48(%ebp)
+    3651:	88 45 ce             	mov    %al,-0x32(%ebp)
+    3654:	58                   	pop    %eax
+    3655:	5a                   	pop    %edx
+    3656:	56                   	push   %esi
+    3657:	53                   	push   %ebx
+    3658:	e8 fc ff ff ff       	call   3659 <FPInit+0x72>
+    365d:	59                   	pop    %ecx
+    365e:	5f                   	pop    %edi
+    365f:	56                   	push   %esi
+    3660:	53                   	push   %ebx
+    3661:	e8 fc ff ff ff       	call   3662 <FPInit+0x7b>
+    3666:	58                   	pop    %eax
+    3667:	5a                   	pop    %edx
+    3668:	6a 00                	push   $0x0
+    366a:	ff 35 00 00 00 00    	pushl  0x0
+    3670:	e8 fc ff ff ff       	call   3671 <FPInit+0x8a>
+    3675:	83 c4 0c             	add    $0xc,%esp
+    3678:	53                   	push   %ebx
+    3679:	6a 00                	push   $0x0
+    367b:	ff 35 00 00 00 00    	pushl  0x0
+    3681:	e8 fc ff ff ff       	call   3682 <FPInit+0x9b>
+    3686:	a1 00 00 00 00       	mov    0x0,%eax
+    368b:	83 c4 10             	add    $0x10,%esp
+    368e:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    3691:	5b                   	pop    %ebx
+    3692:	5e                   	pop    %esi
+    3693:	5f                   	pop    %edi
+    3694:	5d                   	pop    %ebp
+    3695:	c3                   	ret    
+
+00003696 <FPChangeRate>:
+    3696:	55                   	push   %ebp
+    3697:	89 e5                	mov    %esp,%ebp
+    3699:	57                   	push   %edi
+    369a:	56                   	push   %esi
+    369b:	53                   	push   %ebx
+    369c:	81 ec 94 00 00 00    	sub    $0x94,%esp
+    36a2:	8b 55 08             	mov    0x8(%ebp),%edx
+    36a5:	a0 00 00 00 00       	mov    0x0,%al
+    36aa:	8d bd 74 ff ff ff    	lea    -0x8c(%ebp),%edi
+    36b0:	6a 03                	push   $0x3
+    36b2:	57                   	push   %edi
+    36b3:	88 d3                	mov    %dl,%bl
+    36b5:	88 85 74 ff ff ff    	mov    %al,-0x8c(%ebp)
+    36bb:	c6 85 75 ff ff ff 26 	movb   $0x26,-0x8b(%ebp)
+    36c2:	88 95 76 ff ff ff    	mov    %dl,-0x8a(%ebp)
+    36c8:	e8 fc ff ff ff       	call   36c9 <FPChangeRate+0x33>
+    36cd:	83 c4 10             	add    $0x10,%esp
+    36d0:	85 c0                	test   %eax,%eax
+    36d2:	89 c6                	mov    %eax,%esi
+    36d4:	78 56                	js     372c <FPChangeRate+0x96>
+    36d6:	83 ec 0c             	sub    $0xc,%esp
+    36d9:	57                   	push   %edi
+    36da:	e8 fc ff ff ff       	call   36db <FPChangeRate+0x45>
+    36df:	89 c6                	mov    %eax,%esi
+    36e1:	58                   	pop    %eax
+    36e2:	ff 35 00 00 00 00    	pushl  0x0
+    36e8:	e8 fc ff ff ff       	call   36e9 <FPChangeRate+0x53>
+    36ed:	83 c4 10             	add    $0x10,%esp
+    36f0:	84 db                	test   %bl,%bl
+    36f2:	75 0a                	jne    36fe <FPChangeRate+0x68>
+    36f4:	50                   	push   %eax
+    36f5:	68 c8 00 00 00       	push   $0xc8
+    36fa:	6a 0d                	push   $0xd
+    36fc:	eb 1c                	jmp    371a <FPChangeRate+0x84>
+    36fe:	80 fb 01             	cmp    $0x1,%bl
+    3701:	75 0a                	jne    370d <FPChangeRate+0x77>
+    3703:	50                   	push   %eax
+    3704:	68 c8 00 00 00       	push   $0xc8
+    3709:	6a 0e                	push   $0xe
+    370b:	eb 0d                	jmp    371a <FPChangeRate+0x84>
+    370d:	80 fb 02             	cmp    $0x2,%bl
+    3710:	75 1a                	jne    372c <FPChangeRate+0x96>
+    3712:	50                   	push   %eax
+    3713:	68 c8 00 00 00       	push   $0xc8
+    3718:	6a 0f                	push   $0xf
+    371a:	68 e9 37 00 00       	push   $0x37e9
+    371f:	e8 fc ff ff ff       	call   3720 <FPChangeRate+0x8a>
+    3724:	83 c4 10             	add    $0x10,%esp
+    3727:	a3 00 00 00 00       	mov    %eax,0x0
+    372c:	8d 65 f4             	lea    -0xc(%ebp),%esp
+    372f:	89 f0                	mov    %esi,%eax
+    3731:	5b                   	pop    %ebx
+    3732:	5e                   	pop    %esi
+    3733:	5f                   	pop    %edi
+    3734:	5d                   	pop    %ebp
+    3735:	c3                   	ret    
+    3736:	90                   	nop
+    3737:	90                   	nop
+    3738:	90                   	nop
+    3739:	90                   	nop
+    373a:	90                   	nop
+    373b:	90                   	nop
+    373c:	90                   	nop
+    373d:	90                   	nop
+    373e:	90                   	nop
+    373f:	90                   	nop
+
+00003740 <__do_global_ctors_aux>:
+    3740:	55                   	push   %ebp
+    3741:	89 e5                	mov    %esp,%ebp
+    3743:	56                   	push   %esi
+    3744:	53                   	push   %ebx
+    3745:	e8 ad e4 ff ff       	call   1bf7 <__i686.get_pc_thunk.bx>
+    374a:	81 c3 aa 28 00 00    	add    $0x28aa,%ebx
+    3750:	8b 83 00 ff ff ff    	mov    -0x100(%ebx),%eax
+    3756:	83 f8 ff             	cmp    $0xffffffff,%eax
+    3759:	74 19                	je     3774 <__do_global_ctors_aux+0x34>
+    375b:	8d b3 00 ff ff ff    	lea    -0x100(%ebx),%esi
+    3761:	8d b4 26 00 00 00 00 	lea    0x0(%esi,%eiz,1),%esi
+    3768:	83 ee 04             	sub    $0x4,%esi
+    376b:	ff d0                	call   *%eax
+    376d:	8b 06                	mov    (%esi),%eax
+    376f:	83 f8 ff             	cmp    $0xffffffff,%eax
+    3772:	75 f4                	jne    3768 <__do_global_ctors_aux+0x28>
+    3774:	5b                   	pop    %ebx
+    3775:	5e                   	pop    %esi
+    3776:	5d                   	pop    %ebp
+    3777:	c3                   	ret    
+
+Disassembly of section .fini:
+
+00003778 <_fini>:
+    3778:	55                   	push   %ebp
+    3779:	89 e5                	mov    %esp,%ebp
+    377b:	53                   	push   %ebx
+    377c:	83 ec 04             	sub    $0x4,%esp
+    377f:	e8 00 00 00 00       	call   3784 <_fini+0xc>
+    3784:	5b                   	pop    %ebx
+    3785:	81 c3 70 28 00 00    	add    $0x2870,%ebx
+    378b:	e8 b0 e3 ff ff       	call   1b40 <__do_global_dtors_aux>
+    3790:	59                   	pop    %ecx
+    3791:	5b                   	pop    %ebx
+    3792:	c9                   	leave  
+    3793:	c3                   	ret    
