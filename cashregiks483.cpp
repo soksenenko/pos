@@ -69,6 +69,15 @@ int CashRegIKS483::DayClrReport(ushort password)
 
 int CashRegIKS483::Avans(ulong avans)
 {
+    if (isConnected()) {
+        this->Disconnect();
+    }
+    uchar *port = (uchar *)QString("/dev/ttyS" + QString::number(portNum)).toAscii().data();
+    int fd = this->Connect(port);
+    if (fd == -1) {
+        return -1;
+    }
+
     return FPAvans(avans);    
 }
 
